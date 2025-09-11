@@ -1,7 +1,7 @@
 // filepath: c:\Users\natha\OneDrive\Documents\PorfolioReact\src\components\Projects.jsx
 export default function Projects() {
   const projects = [
-    { id: 1, title: 'Projet A', description: 'creation d une application en java pour la gestion d un stock en équipe.' },
+    { id: 1, title: "creation d'une application de gestion de stock", description: 'creation d une application en java pour la gestion d un stock en équipe.' },
     { id: 2, title: 'Projet B', description: 'Une courte description du projet B.' },
     { id: 3, title: 'Projet C', description: 'Une courte description du projet C.' },
   ]

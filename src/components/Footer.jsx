@@ -5,7 +5,7 @@ export default function Footer() {
       <div className="container footer-inner">
         <p>© {new Date().getFullYear()} Nathan — Tous droits réservés.</p>
         <nav className="social">
-          <a href="#">GitHub</a>
+          <a href="https://github.com/OretrO">GitHub</a>
           <a href="#">LinkedIn</a>
         </nav>
       </div>
