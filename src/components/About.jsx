@@ -4,15 +4,16 @@ export default function About() {
     <section className="about">
       <h2>À propos de moi</h2>
       <p>
-        Je suis développeur front-end spécialisé en React. J'aime créer des interfaces
-        accessibles, performantes et agréables à utiliser.
+        Je suis etudiant en informatique en BUT informatique a lens  , je recherche un Stage qui commencerai a partir du 14 avril
+        ou une alternancea p qui commencerai a partir de fevrier
       </p>
-      <h3>Compétences</h3>
+      <h3>Compétences devloppment web</h3>
       <ul className="skills">
-        <li>React / Vite</li>
-        <li>JavaScript (ES6+)</li>
-        <li>HTML & CSS modernes</li>
-        <li>Accessibilité & performance</li>
+        <li>React</li>
+        <li>JavaScript </li>
+        <li>HTML , CSS</li>
+        <li>PHP , lavarel</li>
+        <li></li>
       </ul>
     </section>
   )
