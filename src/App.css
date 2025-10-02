@@ -12,7 +12,19 @@
   padding: 0 1rem;
   text-align: left;
 }
+.hero {
+    text-align: center; /* centre tout le contenu */
+    margin-top: 30px;
+}
 
+.avatar {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;   /* recadre pour bien remplir */
+    border-radius: 50%;  /* rend l’image parfaitement ronde */
+    display: block;
+    margin: 0 auto 20px; /* centre l’image et ajoute un espace dessous */
+}
 /* Navbar */
 .navbar {
   display: flex;
