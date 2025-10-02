@@ -1,3 +1,7 @@
+import gestionStock from "../assets/gestion-stock.png"
+import bomberman from "../assets/bomberman.png"
+
+
 export default function Projects() {
     const projects = [
         {
@@ -5,22 +9,22 @@ export default function Projects() {
             title: "Création d'une application de gestion de stock",
             description: "Application en Java pour la gestion d'un stock en équipe.",
             link: "https://github.com/OretrO/O-de-France",
-            image: "/images/gestion-stock.png"
+            image: gestionStock
         },
         {
             id: 2,
             title: "Création d'un bomber-man en Java",
-            description: "Petit jeu type bomberman en Java.",
+            description: "Petit jeu de type bomberman en Java.",
             link: "https://github.com/toncompte/bomberman",
-            image: "/images/bomberman.png"
+            image: bomberman
         },
         {
             id: 3,
-            title: "Creation de mon porfolio en React",
-            description: "Création de mon porfolio en React en appprenent le framework",
-            link: "https://github.com/toncompte/projet-c",
-            image: "/images/projet-c.png"
-        },
+            title: "Création de mon portfolio en React",
+            description: "Création de mon portfolio en React en apprenant le framework",
+            link: "https://github.com/OretrO/Porfolio-nathan",
+            image: null
+        }
     ]
 
     return (
