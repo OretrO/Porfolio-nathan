@@ -24,6 +24,14 @@ export default function Projects() {
             description: "Création de mon portfolio en React en apprenant le framework",
             link: "https://github.com/OretrO/Porfolio-nathan",
             image: null
+        },
+        {
+            id: 4,
+            title : "Site evenementiel en HTML/CSS",
+            description: "Création d'un site en équipe sur le sujet de l'evenementiel fait uniquement en HTML/CSS",
+            link : "",
+            image : null
+
         }
     ]
 

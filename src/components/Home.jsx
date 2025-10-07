@@ -4,13 +4,13 @@ export default function Home({ onNavigate }) {
     return (
         <section className="home">
             <div className="hero">
-                {/* Avatar au-dessus */}
+
                 <img src={avatar} alt="Avatar de Nathan" className="avatar" />
 
-                {/* Titre principal */}
-                <h1> Porfolio Nathan Plouvin</h1>
 
-                {/* Texte de présentation */}
+                <h1> Porfolio de  Nathan Plouvin</h1>
+
+
                 <h2>Bonjour, je m'appelle Nathan, je suis  apprenti développeur en 2ème année de BUT informatique.</h2>
 
                 <div className="hero-actions">
