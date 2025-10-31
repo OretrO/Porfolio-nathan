@@ -1,8 +1,17 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+  width: 100%;
+  margin: 0;
+  padding: 0;
   text-align: center;
+}
+
+/* Ensure the page background can fill the whole viewport.
+   Do not constrain #root with a max-width — the content container (.container)
+   will handle centering and max-width instead. */
+
+/* Make the root elements full-height so #app-root background covers the page */
+html, body, #root, #app-root {
+  height: 100%;
 }
 
 /* Layout container used by App */
@@ -187,11 +196,224 @@ button.muted {
 }
 
 /* Theme-aware tweaks when App sets data-theme */
-#app-root[data-theme="dark"] {
+body[data-theme="dark"] {
   background: radial-gradient(1200px 600px at 10% 10%, rgba(100,108,255,0.06), transparent), linear-gradient(180deg, #141418 0%, #18181c 100%);
   color: #e6e7ee;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
 }
-#app-root[data-theme="light"] {
+body[data-theme="light"] {
   background: linear-gradient(180deg, #ffffff 0%, #f7f9ff 100%);
   color: #1f2937;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+/* Apply background also to html element and make it fixed so very long pages keep the theme */
+html[data-theme="dark"], body[data-theme="dark"] {
+  background: radial-gradient(1200px 600px at 10% 10%, rgba(100,108,255,0.06), transparent), linear-gradient(180deg, #141418 0%, #18181c 100%);
+  color: #e6e7ee;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+html[data-theme="light"], body[data-theme="light"] {
+  background: linear-gradient(180deg, #ffffff 0%, #f7f9ff 100%);
+  color: #1f2937;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+/* Keep #app-root styles but make background transparent so html/body handle full-page background */
+#app-root[data-theme="dark"] {
+  min-height: 100vh; /* keep spacing */
+  background: transparent;
+  color: inherit;
+}
+#app-root[data-theme="light"] {
+  min-height: 100vh; /* keep spacing */
+  background: transparent;
+  color: inherit;
+}
+
+/* Skill bars for About component */
+.skills-list {
+  display: grid;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+.skill {
+  display: block;
+}
+.skill-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-bottom: 0.35rem;
+}
+.skill-name { color: inherit; }
+.skill-pct { opacity: 0.9; font-weight: 700; }
+.skill-track {
+  background: rgba(255,255,255,0.06);
+  height: 12px;
+  border-radius: 999px;
+  overflow: hidden;
+}
+.skill-fill {
+  /* valeur CSS custom par défaut pour rassurer le linter/validator */
+  --pct: 0%;
+  height: 100%;
+  width: 0%; /* valeur initiale, remplie via inline style */
+  background: linear-gradient(90deg, #646cff, #4f7bff);
+  box-shadow: 0 4px 14px rgba(79,123,255,0.12) inset;
+  border-radius: 999px;
+  transition: width 850ms cubic-bezier(.2,.9,.2,1);
+}
+
+/* When reveal animation sets in-view, animate fills to their width (with fallback) */
+.reveal.in-view .skill-fill {
+  width: var(--pct, 0%);
+}
+
+/* Category (global) skill bars */
+.category-bars {
+  display: grid;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+.category {
+  display: block;
+}
+.category-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 700;
+  font-size: 1rem;
+  margin-bottom: 0.45rem;
+}
+.category-name { color: inherit; }
+.category-pct { opacity: 0.95; font-weight: 800; }
+.category-track {
+  background: rgba(255,255,255,0.04);
+  height: 16px;
+  border-radius: 999px;
+  overflow: hidden;
+}
+.category-fill {
+  --pct: 0%;
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #ff7a7a, #ffb86b);
+  border-radius: 999px;
+  box-shadow: 0 6px 20px rgba(255,138,108,0.08) inset;
+  transition: width 900ms cubic-bezier(.2,.9,.2,1);
+}
+
+/* animate when reveal becomes visible */
+.reveal.in-view .category-fill { width: var(--pct, 0%); }
+
+/* Category block tweaks */
+.category-block {
+  padding: 0.75rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.03);
+}
+.category-skills {
+  margin-top: 0.75rem;
+  display: grid;
+  gap: 0.5rem;
+}
+
+/* Mini skills inside a category */
+.skill-mini {
+  display: block;
+}
+.skill-mini-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+  margin-bottom: 0.25rem;
+  color: inherit;
+}
+.skill-mini-track {
+  background: rgba(255,255,255,0.04);
+  height: 8px;
+  border-radius: 999px;
+  overflow: hidden;
+}
+.skill-mini-fill {
+  --pct: 0%;
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #7dd3fc, #60a5fa);
+  border-radius: 999px;
+  transition: width 700ms cubic-bezier(.2,.9,.2,1);
+}
+
+/* animate when reveal visible */
+.reveal.in-view .skill-mini-fill { width: var(--pct, 0%); }
+
+@media (prefers-color-scheme: light) {
+  .skill-track { background: rgba(33,53,71,0.06); }
+  .skill-fill { box-shadow: 0 4px 14px rgba(100,108,255,0.08) inset; }
+}
+
+/* Fixed full-page background fallback using a pseudo-element to guarantee coverage on very long pages */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -9999; /* behind everything */
+  pointer-events: none;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  transition: opacity 260ms ease;
+}
+body[data-theme="dark"]::before {
+  background: radial-gradient(1200px 600px at 10% 10%, rgba(100,108,255,0.06), transparent), linear-gradient(180deg, #141418 0%, #18181c 100%);
+}
+body[data-theme="light"]::before {
+  background: linear-gradient(180deg, #ffffff 0%, #f7f9ff 100%);
+}
+
+/* Project detail styles */
+.project-detail {
+  padding: 0.5rem 0 1.5rem;
+}
+.project-image img { border-radius: 8px; box-shadow: 0 12px 30px rgba(0,0,0,0.45); }
+.project-long { margin: 1rem 0 1.25rem; color: inherit; line-height: 1.6; }
+.project-skills { margin-top: 1rem; }
+
+/* Make project cards visually clickable */
+.project-card { cursor: default; }
+.project-card h3 { margin-top: 0; }
+.project-actions { display: flex; gap: 0.5rem; align-items: center; }
+.project-actions a, .project-actions button { font-size: 0.95rem; }
+
+/* Badges pour les compétences dans ProjectDetail */
+.skill-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+.skill-badge {
+  background: rgba(255,255,255,0.06);
+  color: inherit;
+  padding: 0.35rem 0.65rem;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border: 1px solid rgba(255,255,255,0.03);
+}
+
+@media (prefers-color-scheme: light) {
+  .skill-badge { background: rgba(33,53,71,0.06); }
 }
