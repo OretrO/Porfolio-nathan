@@ -1,12 +1,49 @@
-# React + Vite
+# Portfolio Nathan Plouvin
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Petit portfolio personnel réalisé avec React + Vite pour présenter des projets et compétences.
 
-Currently, two official plugins are available:
+## Fonctionnalités
+- Thème sombre / clair avec sauvegarde dans localStorage
+- Sections : Accueil, Projets, À propos, Contact
+- Barres de compétences animées dans la section « À propos »
+- Page de détail pour chaque projet (description longue, compétences utilisées)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Pré-requis
+- Node.js (version LTS recommandée)
+- npm
 
-## Expanding the ESLint configuration
+## Installation et lancement
+1. Installer les dépendances :
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+   npm install
+
+2. Lancer le serveur de développement :
+
+   npm run dev
+
+3. Construire pour la production :
+
+   npm run build
+
+4. Déployer (gh-pages) :
+
+   npm run deploy
+
+> Le script `deploy` utilise `gh-pages` et le champ `homepage` dans package.json.
+
+## Modifier les projets / compétences
+- Liste des projets : `src/components/Projects.jsx` (ajouter/éditer les objets projets)
+- Section compétences : `src/components/About.jsx`
+- Page de détail : `src/components/ProjectDetail.jsx`
+
+## Structure importante
+- src/
+  - components/ (composants React)
+  - assets/ (images)
+  - App.jsx, App.css (configuration globale)
+
+## Contact
+nathanplouvin482@gmail.com
+
+---
+Licences et crédits : code et images propres au projet. Si tu veux que j’ajoute un README plus détaillé (badge, captures d’écran, instructions de contribution), dis‑le et je l’ajoute.
