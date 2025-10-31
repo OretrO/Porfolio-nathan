@@ -30,7 +30,7 @@ export default function Projects({ onSelectProject }) {
               { name: 'Git' },
               { name: 'GitLab' },
             ],
-            link: "https://github.com/toncompte/bomberman",
+            link: "https://github.com/OretrO/Bomberman",
             image: bomberman
         },
         {
