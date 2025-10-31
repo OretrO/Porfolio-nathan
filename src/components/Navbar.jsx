@@ -1,5 +1,5 @@
 // filepath: c:\Users\natha\OneDrive\Documents\PorfolioReact\src\components\Navbar.jsx
-export default function Navbar({ current = 'home', onNavigate }) {
+export default function Navbar({ current = 'home', onNavigate, theme = 'dark', onToggleTheme }) {
   return (
     <header className="navbar">
       <div className="brand" onClick={() => onNavigate('home')}>
@@ -13,6 +13,12 @@ export default function Navbar({ current = 'home', onNavigate }) {
           <li className={current === 'contact' ? 'nav-item active' : 'nav-item'} onClick={() => onNavigate('contact')}>Contact</li>
         </ul>
       </nav>
+
+      <div className="nav-actions">
+        <button className="theme-toggle" onClick={onToggleTheme} aria-label="Basculer thème">
+          {theme === 'dark' ? '🌙' : '☀️'}
+        </button>
+      </div>
     </header>
   )
 }
