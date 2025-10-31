@@ -76,6 +76,28 @@ button.muted {
   border: 1px solid rgba(255,255,255,0.06);
 }
 
+/* Page transitions and reveal animations */
+.reveal {
+  opacity: 0;
+  transform: translateY(14px) scale(0.995);
+  transition: opacity 420ms cubic-bezier(.2,.9,.2,1), transform 420ms cubic-bezier(.2,.9,.2,1);
+}
+.reveal.in-view {
+  opacity: 1;
+  transform: none;
+}
+
+/* Theme toggle button */
+.nav-actions { display: flex; align-items: center; gap: 0.5rem; }
+.theme-toggle {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.06);
+  padding: 0.35rem 0.6rem;
+  border-radius: 8px;
+  font-size: 1.05rem;
+}
+.theme-toggle:hover { border-color: rgba(100,108,255,0.2); }
+
 /* Projects grid */
 .projects-grid {
   display: grid;
@@ -89,6 +111,7 @@ button.muted {
   background: rgba(255,255,255,0.03);
   box-shadow: 0 1px 0 rgba(0,0,0,0.4) inset;
 }
+.project-card:hover { transform: translateY(-6px); box-shadow: 0 12px 24px rgba(0,0,0,0.45); transition: transform 220ms, box-shadow 220ms; }
 .project-actions {
   display: flex;
   gap: 0.5rem;
@@ -161,4 +184,14 @@ button.muted {
 @media (max-width: 640px) {
   .footer-inner { flex-direction: column; align-items: flex-start; }
   .nav-list { gap: 0.5rem; }
+}
+
+/* Theme-aware tweaks when App sets data-theme */
+#app-root[data-theme="dark"] {
+  background: radial-gradient(1200px 600px at 10% 10%, rgba(100,108,255,0.06), transparent), linear-gradient(180deg, #141418 0%, #18181c 100%);
+  color: #e6e7ee;
+}
+#app-root[data-theme="light"] {
+  background: linear-gradient(180deg, #ffffff 0%, #f7f9ff 100%);
+  color: #1f2937;
 }

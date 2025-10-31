@@ -1,7 +1,7 @@
 // filepath: c:\Users\natha\OneDrive\Documents\PorfolioReact\src\components\About.jsx
 export default function About() {
   return (
-    <section className="about">
+    <section className="about reveal">
       <h2>À propos de moi</h2>
       <p>
           Je m'appelle Nathan , je suis étudiant un BUT informatique à L'iut de Lens

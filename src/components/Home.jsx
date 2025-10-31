@@ -2,7 +2,7 @@ import avatar from '../assets/nathan.png'
 
 export default function Home({ onNavigate }) {
     return (
-        <section className="home">
+        <section className="home reveal">
             <div className="hero">
                 {/* Avatar au-dessus */}
                 <img src={avatar} alt="Avatar de Nathan" className="avatar" />

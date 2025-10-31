@@ -28,7 +28,7 @@ export default function Projects() {
     ]
 
     return (
-        <section className="projects">
+        <section className="projects reveal">
             <h2>Mes projets personnels et d'étude</h2>
             <div className="projects-grid">
                 {projects.map((p) => (
@@ -38,14 +38,15 @@ export default function Projects() {
                         <div className="project-actions">
                             {/* Lien GitHub unique */}
                             <a href={p.link} target="_blank" rel="noopener noreferrer">Voir le code</a>
-
-                            {/* Bouton qui ouvre l'image */}
-                            <button
-                                className="muted"
-                                onClick={() => window.open(p.image, "_blank")}
-                            >
-                                Image
-                            </button>
+                            {/* Bouton qui ouvre l'image si elle existe */}
+                            {p.image ? (
+                                <button
+                                    className="muted"
+                                    onClick={() => window.open(p.image, "_blank")}
+                                >
+                                    Image
+                                </button>
+                            ) : null}
                         </div>
                     </article>
                 ))}

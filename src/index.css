@@ -30,6 +30,12 @@ body {
   min-height: 100vh;
 }
 
+/* Smooth page-wide transitions */
+* { transition: background-color 260ms ease, color 260ms ease; }
+
+/* Make the app container stretch */
+#app-root { width: 100%; min-height: 100vh; padding: 2.2rem 1rem; box-sizing: border-box; }
+
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
