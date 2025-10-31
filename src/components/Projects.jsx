@@ -1,5 +1,6 @@
 import gestionStock from "../assets/gestion-stock.png"
 import bomberman from "../assets/bomberman.png"
+import site from "../assets/SiteHTML.png"
 
 
 export default function Projects({ onSelectProject }) {
@@ -8,7 +9,7 @@ export default function Projects({ onSelectProject }) {
             id: 1,
             title: "Création d'une application de gestion de stock",
             description: "Application en Java pour la gestion d'un stock en équipe.",
-            longDescription: "Application desktop réalisée en Java pendant un projet d'équipe. Implémentation des opérations CRUD, gestion des utilisateurs, et génération de rapports. J'ai travaillé principalement sur la couche persistante et l'interface.",
+            longDescription: "Application desktop réalisée en Java pendant un projet d'équipe.Gestion des utilisateurs. J'ai travaillé principalement sur l'interface des commandes .",
             skillsWorked: [
               { name: 'Java'    },
               { name: 'JavaFX'},
@@ -22,7 +23,7 @@ export default function Projects({ onSelectProject }) {
             id: 2,
             title: "Création d'un bomber-man en Java",
             description: "Petit jeu de type bomberman en Java.",
-            longDescription: "Prototype d'un jeu bomberman en Java. Conception du moteur de collisions, IA basique des ennemis et système d'animations. Projet pour apprendre les boucles de jeu et la gestion des ressources graphiques.",
+            longDescription:  "jeu bomberman en Java. Deplacement  basique des ennemis et système d'animations. Projet pour apprendre les boucles de jeu et la conception d'une interface en javafx.",
             skillsWorked: [
               { name: 'Java'},
               { name: 'JavaFX'},
@@ -45,6 +46,33 @@ export default function Projects({ onSelectProject }) {
                 { name: 'GitLab' },
             ],
             link: "https://github.com/OretrO/Porfolio-nathan",
+            image: null
+        },
+        {
+            id: 4,
+            title: "Création d'un site en HTML/CSS",
+            description: "Site vitrine statique conçu et intégré en HTML/CSS.",
+            longDescription: "Conception et intégration d'un site statique responsive en HTML et CSS. Sur le théme d'un site événementiel.",
+            skillsWorked: [
+              { name: 'HTML' },
+              { name: 'CSS' },
+              { name: 'Responsive' },
+              { name: 'Accessibilité' },
+            ],
+            link: "https://github.com/OretrO/Site-HTML-CSS",
+            image: site
+        },
+        {
+            id: 5,
+            title: "Synthétiseur sonore en Java",
+            description: "Synthétiseur développé en Java pour reporduire des sons.",
+            longDescription: "Développement d'un synthétiseur en Java (bibliothèques audio) : oscillateurs, filtres, enveloppes ADSR ",
+            skillsWorked: [
+              { name: 'Java' },
+              { name: 'design pattern' },
+              { name: 'Git' },
+            ],
+            link: "https://github.com/OretrO/Synthe",
             image: null
         }
     ]
