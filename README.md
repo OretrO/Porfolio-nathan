@@ -45,5 +45,3 @@ Petit portfolio personnel réalisé avec React + Vite pour présenter des projet
 ## Contact
 nathanplouvin482@gmail.com
 
----
-Licences et crédits : code et images propres au projet. Si tu veux que j’ajoute un README plus détaillé (badge, captures d’écran, instructions de contribution), dis‑le et je l’ajoute.
