@@ -20,6 +20,16 @@ function App() {
     }
   })
 
+  // Fixe un titre constant pour l'onglet
+  useEffect(() => {
+    const base = 'Portfolio — Nathan Plouvin'
+    try {
+      document.title = base
+    } catch (err) {
+      console.warn('Impossible de définir le titre du document :', err)
+    }
+  }, [])
+
   useEffect(() => {
     // persist theme and set it on <body> so background covers full page
     try {
