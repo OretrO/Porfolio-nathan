@@ -21,7 +21,7 @@ export default function ProjectDetail({ project, onBack }) {
 
       {project.skillsWorked && project.skillsWorked.length > 0 ? (
         <div className="project-skills">
-          <h3>Compétences travaillées</h3>
+          <h3>Compétences utilisées</h3>
           <div className="skill-badges">
             {project.skillsWorked.map((s) => (
               <span key={s.name} className="skill-badge">{s.name}</span>

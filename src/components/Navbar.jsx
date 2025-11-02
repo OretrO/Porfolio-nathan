@@ -3,7 +3,7 @@ export default function Navbar({ current = 'home', onNavigate, theme = 'dark', o
   return (
     <header className="navbar">
       <div className="brand" onClick={() => onNavigate('home')}>
-        MonPortfolio
+        Mon portfolio
       </div>
       <nav>
         <ul className="nav-list">
@@ -15,11 +15,10 @@ export default function Navbar({ current = 'home', onNavigate, theme = 'dark', o
       </nav>
 
       <div className="nav-actions">
-        <button className="theme-toggle" onClick={onToggleTheme} aria-label="Basculer thème">
+        <button className="theme-toggle" onClick={onToggleTheme} aria-label="Basculer le thème">
           {theme === 'dark' ? '🌙' : '☀️'}
         </button>
       </div>
     </header>
   )
 }
-

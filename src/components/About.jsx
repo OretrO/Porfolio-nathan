@@ -8,7 +8,7 @@ export default function About() {
         { name: 'React', pct: 70},
         { name: 'JavaScript', pct: 75 },
         { name: 'HTML/CSS', pct: 80 },
-          {name : "Php/Laravel", pct: 80}
+        { name: 'PHP / Laravel', pct: 80 }
       ],
     },
     {
@@ -31,17 +31,17 @@ export default function About() {
       pct: 80,
       skills: [
         { name: 'Git', pct: 85 },
-        { name: 'Gitlab / Github', pct: 75 },
+        { name: 'GitLab / GitHub', pct: 75 },
       ],
     },
-      {
-        name: "Systèmes d'exploitation",
-        pct: 70,
-        skills: [
-            { name: 'Linux', pct: 75 },
-            { name: 'Windows', pct: 65 },
-        ],
-      }
+    {
+      name: "Systèmes d'exploitation",
+      pct: 70,
+      skills: [
+        { name: 'Linux', pct: 75 },
+        { name: 'Windows', pct: 60 },
+      ],
+    }
   ]
 
   const renderCategory = (c) => (
