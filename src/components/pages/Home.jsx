@@ -1,10 +1,10 @@
-import avatar from '../../assets/nathan.png'
+import avatar from '../../assets/logos/nathan.png'
 
 export default function Home({ onNavigate }) {
     return (
         <section className="home reveal">
             <div className="hero">
-                <img src={avatar} alt="Avatar de Nathan" className="avatar" />
+                <img src={avatar} alt="Avatar de Nathan" className="avatar" loading="lazy" />
 
                 <h1>Portfolio de Nathan Plouvin</h1>
 

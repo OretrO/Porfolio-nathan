@@ -1,6 +1,9 @@
-import gestionStock from "../../assets/gestion-stock.png"
-import bomberman from "../../assets/bomberman.png"
-import site from "../../assets/SiteHTML.png"
+import gestionStock from "../../assets/projects/gestion-stock.png"
+import bomberman from "../../assets/projects/bomberman.png"
+import siteHTML from "../../assets/projects/SiteHTML.png"
+import cinehub from "../../assets/projects/cinehub.png"
+import marathonWeb from "../../assets/projects/marathonWeb.png"
+import lenSynphonie from "../../assets/projects/lenSynphonie.png"
 
 
 export default function Projects({ onSelectProject }) {
@@ -60,7 +63,7 @@ export default function Projects({ onSelectProject }) {
               { name: 'Accessibilité' },
             ],
             link: "https://github.com/OretrO/Site-HTML-CSS",
-            image: site
+            image: siteHTML
         },
         {
             id: 5,
@@ -74,6 +77,58 @@ export default function Projects({ onSelectProject }) {
             ],
             link: "https://github.com/OretrO/Synthe",
             image: null
+        },
+        {
+            id: 6,
+            title: "CineHub - Hub de Films",
+            description: "Création d'un hub avec des films où les gens peuvent commenter et liker des films.",
+            longDescription: "Application web permettant aux utilisateurs de découvrir des films, de les commenter et de les liker. Système d'authentification, gestion des commentaires et interactions sociales autour du cinéma.",
+            skillsWorked: [
+              { name: 'Laravel' },
+              { name: 'PHP' },
+              { name: 'Blade' },
+              { name: 'SQLite' },
+              { name: 'Git' },
+              { name: 'GitHub' },
+            ],
+            link: "https://github.com/OretrO/CineHub",
+            image: cinehub
+        },
+        {
+            id: 7,
+            title: "Marathon du Web",
+            description: "Projet réalisé en 24h sur le thème de la musique avec un groupe de moins de 6 personnes.",
+            longDescription: "Site web complet développé lors d'un marathon de 24h en équipe (moins de 6 personnes). Projet intensif sur le thème de la musique avec gestion du temps, collaboration et créativité sous pression.",
+            skillsWorked: [
+              { name: 'Laravel' },
+              { name: 'JavaScript' },
+              { name: 'Tailwind CSS' },
+                { name: 'PHP' },
+              { name: 'Blade' },
+              { name: 'SQLite' },
+                { name: 'Mysql' },
+              { name: 'Travail d\'équipe' },
+              { name: 'Git' },
+              { name: 'GitHub' },
+            ],
+            link: "https://github.com/OretrO/marathon-web",
+            image: marathonWeb
+        },
+        {
+            id: 8,
+            title: "Len-Synphonie - Synthétiseur Vocal",
+            description: "Site où les personnes peuvent écouter et créer des sons grâce à un synthétiseur vocal.",
+            longDescription: "Application web interactive permettant aux utilisateurs de créer et d'écouter des sons grâce à un synthétiseur vocal. Interface intuitive pour la manipulation de sons et la création musicale en ligne.",
+            skillsWorked: [
+              { name: 'Laravel' },
+              { name: 'PHP' },
+              { name: 'Blade' },
+              { name: 'SQLite' },
+              { name: 'Git' },
+              { name: 'GitHub' },
+            ],
+            link: "https://github.com/OretrO/Len-Synphonie",
+            image: lenSynphonie
         }
     ]
 
