@@ -1,6 +1,6 @@
-import gestionStock from "../assets/gestion-stock.png"
-import bomberman from "../assets/bomberman.png"
-import site from "../assets/SiteHTML.png"
+import gestionStock from "../../assets/gestion-stock.png"
+import bomberman from "../../assets/bomberman.png"
+import site from "../../assets/SiteHTML.png"
 
 
 export default function Projects({ onSelectProject }) {

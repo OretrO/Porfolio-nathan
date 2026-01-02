@@ -1,4 +1,4 @@
-import avatar from '../assets/nathan.png'
+import avatar from '../../assets/nathan.png'
 
 export default function Home({ onNavigate }) {
     return (
