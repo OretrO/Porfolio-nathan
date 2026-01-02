@@ -30,9 +30,11 @@ html, body, #root, #app-root {
     width: 120px;
     height: 120px;
     object-fit: cover;   /* recadre pour bien remplir */
-    border-radius: 50%;  /* rend l’image parfaitement ronde */
+    border-radius: 50%;  /* rend l'image parfaitement ronde */
     display: block;
-    margin: 0 auto 20px; /* centre l’image et ajoute un espace dessous */
+    margin: 0 auto 20px; /* centre l'image et ajoute un espace dessous */
+    background-color: var(--surface);  /* placeholder pendant le chargement */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 /* Navbar */
 .navbar {
@@ -85,6 +87,16 @@ button.muted {
   border: 1px solid rgba(255,255,255,0.06);
 }
 
+/* Better visibility for muted buttons in light theme */
+body[data-theme="light"] button.muted {
+  border: 1px solid rgba(0,0,0,0.2);
+  color: #374151;
+}
+body[data-theme="light"] button.muted:hover {
+  border-color: #646cff;
+  background: rgba(100,108,255,0.05);
+}
+
 /* Page transitions and reveal animations */
 .reveal {
   opacity: 0;
@@ -121,6 +133,16 @@ button.muted {
   box-shadow: 0 1px 0 rgba(0,0,0,0.4) inset;
 }
 .project-card:hover { transform: translateY(-6px); box-shadow: 0 12px 24px rgba(0,0,0,0.45); transition: transform 220ms, box-shadow 220ms; }
+
+body[data-theme="light"] .project-card {
+  background: rgba(0,0,0,0.03);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  border: 1px solid rgba(0,0,0,0.06);
+}
+body[data-theme="light"] .project-card:hover {
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
 .project-actions {
   display: flex;
   gap: 0.5rem;

@@ -1,13 +1,15 @@
 import { useState, useEffect } from 'react'
 import './App.css'
 
-import Navbar from './components/Navbar.jsx'
-import Home from './components/Home.jsx'
-import Projects from './components/Projects.jsx'
-import ProjectDetail from './components/ProjectDetail.jsx'
-import About from './components/About.jsx'
-import Contact from './components/Contact.jsx'
-import Footer from './components/Footer.jsx'
+import {
+  Navbar,
+  Footer,
+  Home,
+  About,
+  Contact,
+  Projects,
+  ProjectDetail
+} from './components'
 
 function App() {
   const [route, setRoute] = useState('home')
