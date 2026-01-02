@@ -1,7 +1,7 @@
 import gestionStock from "../../assets/projects/gestion-stock.png"
 import bomberman from "../../assets/projects/bomberman.png"
 import siteHTML from "../../assets/projects/SiteHTML.png"
-import cinehub from "../../assets/projects/cinehub.png"
+import cineHubImg from "../../assets/projects/cinehub.png"
 import marathonWeb from "../../assets/projects/marathonWeb.png"
 import lenSynphonie from "../../assets/projects/lenSynphonie.png"
 
@@ -98,7 +98,7 @@ export default function Projects({ onSelectProject }) {
               { name: 'GitHub' },
             ],
             link: "https://github.com/OretrO/CineHub",
-            image: cinehub
+            image: cineHubImg
         },
         {
             id: 7,
