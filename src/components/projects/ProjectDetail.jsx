@@ -19,6 +19,13 @@ export default function ProjectDetail({ project, onBack }) {
         <p>{project.longDescription}</p>
       </div>
 
+      {project.skillsDescription ? (
+        <div className="project-skills-description" style={{ marginTop: '1.5rem', marginBottom: '1.5rem' }}>
+          <h3>Ce que j'ai appris</h3>
+          <p>{project.skillsDescription}</p>
+        </div>
+      ) : null}
+
       {project.skillsWorked && project.skillsWorked.length > 0 ? (
         <div className="project-skills">
           <h3>Compétences utilisées</h3>
