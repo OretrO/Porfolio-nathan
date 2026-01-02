@@ -146,13 +146,16 @@ body[data-theme="light"] a.muted:hover {
 
 body[data-theme="light"] .theme-toggle,
 body[data-theme="light"] .language-toggle {
-  border-color: rgba(0,0,0,0.15);
+  border-color: rgba(0,0,0,0.2);
+  background: rgba(0,0,0,0.03);
+  color: #1f2937;
 }
 
 body[data-theme="light"] .theme-toggle:hover,
 body[data-theme="light"] .language-toggle:hover {
-  border-color: rgba(100,108,255,0.4);
-  background: rgba(100,108,255,0.05);
+  border-color: rgba(100,108,255,0.5);
+  background: rgba(100,108,255,0.1);
+  color: #4f46e5;
 }
 
 /* Projects grid */
