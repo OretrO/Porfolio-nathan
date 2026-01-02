@@ -4,7 +4,7 @@ export default function Home({ onNavigate }) {
     return (
         <section className="home reveal">
             <div className="hero">
-                <img src={avatar} alt="Avatar de Nathan" className="avatar" loading="lazy" />
+                <img src={avatar} alt="Avatar de Nathan" className="avatar" />
 
                 <h1>Portfolio de Nathan Plouvin</h1>
 

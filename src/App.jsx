@@ -14,13 +14,7 @@ import {
 function App() {
   const [route, setRoute] = useState('home')
   const [selectedProject, setSelectedProject] = useState(null)
-  const [theme, setTheme] = useState(() => {
-    try {
-      return localStorage.getItem('theme') || 'dark'
-    } catch {
-      return 'dark'
-    }
-  })
+  const [theme, setTheme] = useState('dark')
 
   // Fixe un titre constant pour l'onglet
   useEffect(() => {

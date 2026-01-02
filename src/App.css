@@ -229,8 +229,64 @@ body[data-theme="light"] .project-card:hover {
 
 /* Responsive tweaks */
 @media (max-width: 640px) {
-  .footer-inner { flex-direction: column; align-items: flex-start; }
-  .nav-list { gap: 0.5rem; }
+  .navbar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+  }
+
+  .brand {
+    text-align: center;
+    margin-bottom: 0.5rem;
+  }
+
+  .nav-list {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .nav-actions {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+  }
+
+  .hero {
+    padding: 1rem 0;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero h2 {
+    font-size: 1.2rem;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .hero-actions button {
+    width: 100%;
+  }
+
+  .footer-inner {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .footer-inner .social {
+    margin-top: 0.5rem;
+  }
+
+  .footer-inner .social a {
+    margin: 0 0.5rem;
+  }
 }
 
 /* Theme-aware tweaks when App sets data-theme */
@@ -240,6 +296,7 @@ body[data-theme="dark"] {
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
+  --surface: rgba(255, 255, 255, 0.1);
 }
 body[data-theme="light"] {
   background: linear-gradient(180deg, #ffffff 0%, #f7f9ff 100%);
@@ -247,6 +304,29 @@ body[data-theme="light"] {
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
+  --surface: rgba(0, 0, 0, 0.05);
+}
+
+/* Improve visibility in light mode for specific elements */
+body[data-theme="light"] .hero h2,
+body[data-theme="light"] .project-detail h2,
+body[data-theme="light"] .project-detail h3,
+body[data-theme="light"] .project-long,
+body[data-theme="light"] .project-skills {
+  color: #1f2937;
+}
+
+body[data-theme="light"] .project-image img {
+  background: rgba(0,0,0,0.05);
+  border: 1px solid rgba(0,0,0,0.1);
+}
+
+body[data-theme="light"] button.muted,
+body[data-theme="light"] a.muted {
+  background: rgba(255,255,255,0.5);
+  border: 1px solid rgba(0,0,0,0.2);
+  color: #1f2937;
+  opacity: 1;
 }
 
 /* Apply background also to html element and make it fixed so very long pages keep the theme */
@@ -520,6 +600,7 @@ body[data-theme="light"] .btn-download {
   background: linear-gradient(135deg, #4f46e5 0%, #4338ca 100%);
   box-shadow: 0 4px 12px rgba(79,70,229,0.3);
   color: white;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.2);
 }
 
 body[data-theme="light"] .btn-download:hover {
@@ -544,3 +625,36 @@ body[data-theme="light"] .btn-download:hover {
   }
 }
 
+/* Project Detail Header */
+.project-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.project-header-actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+@media (max-width: 640px) {
+  .project-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .project-header-actions {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .project-header-actions button,
+  .project-header-actions a {
+    flex: 1;
+    text-align: center;
+  }
+}

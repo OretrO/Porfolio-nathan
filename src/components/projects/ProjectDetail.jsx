@@ -1,11 +1,11 @@
 export default function ProjectDetail({ project, onBack }) {
   return (
     <section className="project-detail reveal">
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '1rem', marginBottom: '1rem' }}>
+      <div className="project-header">
         <h2>{project.title}</h2>
-        <div>
+        <div className="project-header-actions">
           <button className="muted" onClick={onBack}>← Retour</button>
-          <a href={project.link} target="_blank" rel="noopener noreferrer" style={{ marginLeft: '0.5rem' }} className="muted">Voir le code</a>
+          <a href={project.link} target="_blank" rel="noopener noreferrer" className="muted">Voir le code</a>
         </div>
       </div>
 

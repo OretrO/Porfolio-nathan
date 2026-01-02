@@ -113,7 +113,6 @@ export default function Projects({ onSelectProject }) {
                 { name: 'PHP' },
               { name: 'Blade' },
               { name: 'SQLite' },
-                { name: 'Mysql' },
               { name: 'Travail d\'équipe' },
               { name: 'Git' },
               { name: 'GitHub' },
