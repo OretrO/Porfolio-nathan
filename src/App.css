@@ -439,3 +439,91 @@ body[data-theme="light"]::before {
 @media (prefers-color-scheme: light) {
   .skill-badge { background: rgba(33,53,71,0.06); }
 }
+
+/* Styles pour la section CV */
+.cv-section {
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+body[data-theme="light"] .cv-section {
+  border-top-color: rgba(0,0,0,0.1);
+}
+
+.cv-container {
+  margin-top: 1rem;
+}
+
+.cv-viewer {
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+body[data-theme="light"] .cv-viewer {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.cv-viewer iframe {
+  display: block;
+  width: 100%;
+  min-height: 600px;
+  background: white;
+}
+
+.cv-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.btn-download {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(135deg, #646cff 0%, #4f7bff 100%);
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 12px rgba(100,108,255,0.3);
+}
+
+.btn-download:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(100,108,255,0.4);
+  color: white;
+}
+
+body[data-theme="light"] .btn-download {
+  background: linear-gradient(135deg, #4f46e5 0%, #4338ca 100%);
+  box-shadow: 0 4px 12px rgba(79,70,229,0.3);
+}
+
+body[data-theme="light"] .btn-download:hover {
+  box-shadow: 0 6px 16px rgba(79,70,229,0.4);
+}
+
+/* Responsive pour la section CV */
+@media (max-width: 768px) {
+  .cv-viewer iframe {
+    min-height: 500px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cv-viewer iframe {
+    min-height: 400px;
+  }
+
+  .btn-download {
+    width: 100%;
+    justify-content: center;
+  }
+}
+

@@ -1,4 +1,3 @@
-// filepath: c:\Users\natha\OneDrive\Documents\PorfolioReact\src\components\About.jsx
 export default function About() {
   const categories = [
     {
