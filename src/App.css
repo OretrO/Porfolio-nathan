@@ -126,14 +126,34 @@ body[data-theme="light"] a.muted:hover {
 
 /* Theme toggle button */
 .nav-actions { display: flex; align-items: center; gap: 0.5rem; }
-.theme-toggle {
+
+.theme-toggle,
+.language-toggle {
   background: transparent;
   border: 1px solid rgba(255,255,255,0.06);
   padding: 0.35rem 0.6rem;
   border-radius: 8px;
   font-size: 1.05rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
 }
-.theme-toggle:hover { border-color: rgba(100,108,255,0.2); }
+
+.theme-toggle:hover,
+.language-toggle:hover {
+  border-color: rgba(100,108,255,0.2);
+  transform: scale(1.05);
+}
+
+body[data-theme="light"] .theme-toggle,
+body[data-theme="light"] .language-toggle {
+  border-color: rgba(0,0,0,0.15);
+}
+
+body[data-theme="light"] .theme-toggle:hover,
+body[data-theme="light"] .language-toggle:hover {
+  border-color: rgba(100,108,255,0.4);
+  background: rgba(100,108,255,0.05);
+}
 
 /* Projects grid */
 .projects-grid {
@@ -547,6 +567,57 @@ body[data-theme="light"] .cv-section {
   border-top-color: rgba(0,0,0,0.1);
 }
 
+/* Sélecteur de langue pour le CV */
+.cv-language-selector {
+  display: flex;
+  gap: 0.75rem;
+  margin: 1.5rem 0 1rem;
+  justify-content: center;
+}
+
+.btn-lang {
+  padding: 0.65rem 1.5rem;
+  background: rgba(255,255,255,0.06);
+  color: inherit;
+  border: 2px solid rgba(255,255,255,0.1);
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-lang:hover {
+  background: rgba(100,108,255,0.15);
+  border-color: rgba(100,108,255,0.3);
+  transform: translateY(-2px);
+}
+
+.btn-lang.active {
+  background: linear-gradient(135deg, #646cff 0%, #4f7bff 100%);
+  border-color: #646cff;
+  color: white;
+  box-shadow: 0 4px 12px rgba(100,108,255,0.4);
+}
+
+body[data-theme="light"] .btn-lang {
+  background: rgba(0,0,0,0.05);
+  border-color: rgba(0,0,0,0.15);
+  color: #1f2937;
+}
+
+body[data-theme="light"] .btn-lang:hover {
+  background: rgba(100,108,255,0.1);
+  border-color: rgba(100,108,255,0.4);
+}
+
+body[data-theme="light"] .btn-lang.active {
+  background: linear-gradient(135deg, #4f46e5 0%, #4338ca 100%);
+  border-color: #4f46e5;
+  color: white;
+  box-shadow: 0 4px 12px rgba(79,70,229,0.4);
+}
+
 .cv-container {
   margin-top: 1rem;
 }
@@ -612,6 +683,15 @@ body[data-theme="light"] .btn-download:hover {
   .cv-viewer iframe {
     min-height: 500px;
   }
+
+  .cv-language-selector {
+    flex-direction: row;
+    gap: 0.5rem;
+  }
+
+  .btn-lang {
+    flex: 1;
+  }
 }
 
 @media (max-width: 480px) {
@@ -622,6 +702,11 @@ body[data-theme="light"] .btn-download:hover {
   .btn-download {
     width: 100%;
     justify-content: center;
+  }
+
+  .btn-lang {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
   }
 }
 

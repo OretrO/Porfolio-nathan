@@ -11,6 +11,8 @@ import {
   ProjectDetail
 } from './components'
 
+import { LanguageProvider } from './contexts/LanguageContext'
+
 function App() {
   const [route, setRoute] = useState('home')
   const [selectedProject, setSelectedProject] = useState(null)
@@ -63,21 +65,23 @@ function App() {
   }, [route])
 
   return (
-    <div id="app-root" data-theme={theme}>
-      <Navbar current={route} onNavigate={setRoute} theme={theme} onToggleTheme={() => setTheme(t => t === 'dark' ? 'light' : 'dark')} />
-      <main className="container">
-        {route === 'home' && <Home onNavigate={setRoute} />}
-        {route === 'projects' && (
-          <Projects onSelectProject={(p) => { setSelectedProject(p); setRoute('project') }} />
-        )}
-        {route === 'project' && selectedProject && (
-          <ProjectDetail project={selectedProject} onBack={() => setRoute('projects')} />
-        )}
-        {route === 'about' && <About />}
-        {route === 'contact' && <Contact />}
-      </main>
-      <Footer />
-    </div>
+    <LanguageProvider>
+      <div id="app-root" data-theme={theme}>
+        <Navbar current={route} onNavigate={setRoute} theme={theme} onToggleTheme={() => setTheme(t => t === 'dark' ? 'light' : 'dark')} />
+        <main className="container">
+          {route === 'home' && <Home onNavigate={setRoute} />}
+          {route === 'projects' && (
+            <Projects onSelectProject={(p) => { setSelectedProject(p); setRoute('project') }} />
+          )}
+          {route === 'project' && selectedProject && (
+            <ProjectDetail project={selectedProject} onBack={() => setRoute('projects')} />
+          )}
+          {route === 'about' && <About />}
+          {route === 'contact' && <Contact />}
+        </main>
+        <Footer />
+      </div>
+    </LanguageProvider>
   )
 }
 

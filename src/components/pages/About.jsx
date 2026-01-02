@@ -1,7 +1,13 @@
+import { useLanguage } from '../../contexts/LanguageContext'
+import { getTranslation } from '../../translations'
+
 export default function About() {
+  const { language } = useLanguage()
+  const t = (key) => getTranslation(language, key)
+
   const categories = [
     {
-      name: "Développement web",
+      name: language === 'fr' ? "Développement web" : "Web Development",
       pct: 75,
       skills: [
         { name: 'React', pct: 70},
@@ -11,7 +17,7 @@ export default function About() {
       ],
     },
     {
-      name: "Développement d'applications",
+      name: language === 'fr' ? "Développement d'applications" : "Application Development",
       pct: 75,
       skills: [
         { name: 'Java', pct: 70 },
@@ -19,14 +25,14 @@ export default function About() {
       ],
     },
     {
-      name: "Bases de données",
+      name: language === 'fr' ? "Bases de données" : "Databases",
       pct: 70,
       skills: [
         { name: 'SQL / PostgreSQL', pct: 70 },
       ],
     },
     {
-      name: "Outils",
+      name: language === 'fr' ? "Outils" : "Tools",
       pct: 80,
       skills: [
         { name: 'Git', pct: 85 },
@@ -34,7 +40,7 @@ export default function About() {
       ],
     },
     {
-      name: "Systèmes d'exploitation",
+      name: language === 'fr' ? "Systèmes d'exploitation" : "Operating Systems",
       pct: 70,
       skills: [
         { name: 'Linux', pct: 75 },
@@ -73,10 +79,10 @@ export default function About() {
 
   return (
     <section className="about reveal">
-      <h2>À propos de moi</h2>
-      <p>Je m'appelle Nathan, je suis étudiant en BUT Informatique à l'IUT de Lens.</p>
+      <h2>{t('about.title')}</h2>
+      <p>{t('about.intro')}</p>
 
-      <h3>Compétences globales</h3>
+      <h3>{t('about.skillsTitle')}</h3>
       <div className="category-bars">
         {categories.map(renderCategory)}
       </div>

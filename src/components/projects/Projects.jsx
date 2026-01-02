@@ -4,16 +4,21 @@ import siteHTML from "../../assets/projects/SiteHTML.png"
 import cineHubImg from "../../assets/projects/cinehub.png"
 import marathonWeb from "../../assets/projects/marathonWeb.png"
 import lenSynphonie from "../../assets/projects/lenSynphonie.png"
+import { useLanguage } from '../../contexts/LanguageContext'
+import { getTranslation } from '../../translations'
 
 
 export default function Projects({ onSelectProject }) {
+    const { language } = useLanguage()
+    const t = (key) => getTranslation(language, key)
     const projects = [
         {
             id: 1,
-            title: "Création d'une application de gestion de stock",
-            description: "Application en Java pour la gestion d'un stock en équipe.",
-            longDescription: "Application de bureau complète réalisée en Java avec l'interface JavaFX. Ce projet d'équipe visait à simuler la gestion d'un stock d'entreprise, incluant la gestion des produits, des fournisseurs et des commandes. J'ai été responsable de la conception et du développement de l'interface de gestion des commandes, assurant une expérience utilisateur fluide et intuitive.",
-            skillsDescription: "J'ai approfondi ma maîtrise de Java et découvert le framework JavaFX pour les interfaces graphiques. Le travail en équipe m'a permis d'améliorer ma gestion de versions avec Git et GitLab, ainsi que ma communication technique.",
+            key: 'gestionStock',
+            title: language === 'fr' ? "Création d'une application de gestion de stock" : "Stock Management Application",
+            description: t('projectDescriptions.gestionStock.short'),
+            longDescription: t('projectDescriptions.gestionStock.long'),
+            skillsDescription: t('projectDescriptions.gestionStock.skills'),
             skillsWorked: [
               { name: 'Java'    },
               { name: 'JavaFX'},
@@ -25,10 +30,11 @@ export default function Projects({ onSelectProject }) {
         },
         {
             id: 2,
-            title: "Création d'un Bomberman en Java",
-            description: "Petit jeu de type Bomberman en Java.",
-            longDescription:  "Récréation du célèbre jeu Bomberman en Java. Le projet implémente les mécaniques de base : déplacement du joueur, pose de bombes, destruction de murs et intelligence artificielle simple pour les ennemis. L'accent a été mis sur la structure du code et la boucle de jeu.",
-            skillsDescription: "Ce projet m'a permis de comprendre les concepts fondamentaux du développement de jeux vidéo (boucle de jeu, gestion des collisions). J'ai également renforcé mes compétences en programmation orientée objet et en gestion d'événements.",
+            key: 'bomberman',
+            title: language === 'fr' ? "Création d'un Bomberman en Java" : "Bomberman Game in Java",
+            description: t('projectDescriptions.bomberman.short'),
+            longDescription:  t('projectDescriptions.bomberman.long'),
+            skillsDescription: t('projectDescriptions.bomberman.skills'),
             skillsWorked: [
               { name: 'Java'},
               { name: 'JavaFX'},
@@ -40,10 +46,11 @@ export default function Projects({ onSelectProject }) {
         },
         {
             id: 3,
-            title: "Création de mon portfolio en React",
-            description: "Création de mon portfolio en React dans le cadre de l'apprentissage du framework.",
-            longDescription: "Développement de mon portfolio personnel pour présenter mes projets et compétences. Utilisant React et Vite, le site est conçu comme une Single Page Application (SPA) performante. J'ai mis en place un système de routage fluide, des animations d'apparition et un mode sombre/clair.",
-            skillsDescription: "J'ai appris à utiliser React et son écosystème (Hooks, Props, State). J'ai également amélioré mes compétences en CSS moderne (Flexbox, Grid, Variables CSS) et en déploiement continu via GitHub Pages.",
+            key: 'portfolio',
+            title: language === 'fr' ? "Création de mon portfolio en React" : "My React Portfolio",
+            description: language === 'fr' ? "Création de mon portfolio en React dans le cadre de l'apprentissage du framework." : "Creating my portfolio in React as part of learning the framework.",
+            longDescription: language === 'fr' ? "Développement de mon portfolio personnel pour présenter mes projets et compétences. Utilisant React et Vite, le site est conçu comme une Single Page Application (SPA) performante. J'ai mis en place un système de routage fluide, des animations d'apparition et un mode sombre/clair." : "Development of my personal portfolio to showcase my projects and skills. Using React and Vite, the site is designed as a high-performance Single Page Application (SPA). I implemented a smooth routing system, reveal animations, and a dark/light mode.",
+            skillsDescription: language === 'fr' ? "J'ai appris à utiliser React et son écosystème (Hooks, Props, State). J'ai également amélioré mes compétences en CSS moderne (Flexbox, Grid, Variables CSS) et en déploiement continu via GitHub Pages." : "I learned to use React and its ecosystem (Hooks, Props, State). I also improved my skills in modern CSS (Flexbox, Grid, CSS Variables) and continuous deployment via GitHub Pages.",
             skillsWorked: [
               { name: 'React',},
               { name: 'CSS', },
@@ -56,25 +63,27 @@ export default function Projects({ onSelectProject }) {
         },
         {
             id: 4,
-            title: "Création d'un site en HTML/CSS",
-            description: "Site vitrine statique conçu et intégré en HTML/CSS.",
-            longDescription: "Conception et intégration d'un site web statique complet pour un événement fictif. Le site est entièrement responsive, s'adaptant à tous les types d'écrans (mobile, tablette, desktop). Une attention particulière a été portée à l'accessibilité et à la sémantique HTML.",
-            skillsDescription: "J'ai consolidé mes bases en HTML5 et CSS3, notamment sur le responsive design avec les Media Queries. J'ai aussi appris les bonnes pratiques d'accessibilité web (WCAG) pour rendre le contenu accessible à tous.",
+            key: 'siteHTML',
+            title: language === 'fr' ? "Création d'un site en HTML/CSS" : "HTML/CSS Website",
+            description: t('projectDescriptions.siteHTML.short'),
+            longDescription: t('projectDescriptions.siteHTML.long'),
+            skillsDescription: t('projectDescriptions.siteHTML.skills'),
             skillsWorked: [
               { name: 'HTML' },
               { name: 'CSS' },
               { name: 'Responsive' },
-              { name: 'Accessibilité' },
+              { name: language === 'fr' ? 'Accessibilité' : 'Accessibility' },
             ],
             link: "https://github.com/OretrO/Site-HTML-CSS",
             image: siteHTML
         },
         {
             id: 5,
-            title: "Synthétiseur sonore en Java",
-            description: "Synthétiseur développé en Java pour reproduire des sons.",
-            longDescription: "Développement d'un synthétiseur logiciel en Java capable de générer et modifier des ondes sonores en temps réel. Le projet inclut la création d'oscillateurs (sinus, carré, triangle), de filtres et d'enveloppes ADSR pour sculpter le son.",
-            skillsDescription: "Ce projet technique m'a fait explorer le traitement du signal audio et l'utilisation de bibliothèques spécialisées. J'ai dû appliquer des design patterns complexes pour gérer l'architecture modulaire du synthétiseur.",
+            key: 'synthe',
+            title: language === 'fr' ? "Synthétiseur sonore en Java" : "Sound Synthesizer in Java",
+            description: language === 'fr' ? "Synthétiseur développé en Java pour reproduire des sons." : "Synthesizer developed in Java to reproduce sounds.",
+            longDescription: language === 'fr' ? "Développement d'un synthétiseur logiciel en Java capable de générer et modifier des ondes sonores en temps réel. Le projet inclut la création d'oscillateurs (sinus, carré, triangle), de filtres et d'enveloppes ADSR pour sculpter le son." : "Development of a software synthesizer in Java capable of generating and modifying sound waves in real-time. The project includes creating oscillators (sine, square, triangle), filters, and ADSR envelopes to shape the sound.",
+            skillsDescription: language === 'fr' ? "Ce projet technique m'a fait explorer le traitement du signal audio et l'utilisation de bibliothèques spécialisées. J'ai dû appliquer des design patterns complexes pour gérer l'architecture modulaire du synthétiseur." : "This technical project led me to explore audio signal processing and the use of specialized libraries. I had to apply complex design patterns to manage the modular architecture of the synthesizer.",
             skillsWorked: [
               { name: 'Java' },
               { name: 'Design patterns' },
@@ -85,10 +94,11 @@ export default function Projects({ onSelectProject }) {
         },
         {
             id: 6,
+            key: 'cinehub',
             title: "CineHub - Hub de Films",
-            description: "Création d'un hub avec des films où les gens peuvent commenter et liker des films.",
-            longDescription: "Plateforme web communautaire dédiée au cinéma, développée avec le framework Laravel. Les utilisateurs peuvent créer un compte, rechercher des films, laisser des critiques détaillées et noter les œuvres. Le site inclut un système de modération et de gestion de profil.",
-            skillsDescription: "J'ai découvert le framework PHP Laravel et son architecture MVC. J'ai appris à gérer une base de données relationnelle avec SQLite et à sécuriser une application web (authentification, protection CSRF/XSS).",
+            description: t('projectDescriptions.cinehub.short'),
+            longDescription: t('projectDescriptions.cinehub.long'),
+            skillsDescription: t('projectDescriptions.cinehub.skills'),
             skillsWorked: [
               { name: 'Laravel' },
               { name: 'PHP' },
@@ -102,10 +112,11 @@ export default function Projects({ onSelectProject }) {
         },
         {
             id: 7,
-            title: "Marathon du Web",
-            description: "Projet réalisé en 24h sur le thème de la musique avec un groupe de moins de 6 personnes.",
-            longDescription: "Défi intense de développement web : créer un site complet sur le thème de la musique en seulement 24 heures. Notre équipe a réalisé une plateforme de découverte musicale interactive. Le projet a nécessité une organisation rigoureuse et des choix techniques pragmatiques pour tenir les délais.",
-            skillsDescription: "Cette expérience a testé ma capacité à coder rapidement et efficacement sous pression. J'ai amélioré mes compétences en travail d'équipe, en répartition des tâches et en intégration rapide de fonctionnalités avec Tailwind CSS.",
+            key: 'marathonWeb',
+            title: language === 'fr' ? "Marathon du Web" : "Web Marathon",
+            description: t('projectDescriptions.marathonWeb.short'),
+            longDescription: t('projectDescriptions.marathonWeb.long'),
+            skillsDescription: t('projectDescriptions.marathonWeb.skills'),
             skillsWorked: [
               { name: 'Laravel' },
               { name: 'JavaScript' },
@@ -113,7 +124,7 @@ export default function Projects({ onSelectProject }) {
                 { name: 'PHP' },
               { name: 'Blade' },
               { name: 'SQLite' },
-              { name: 'Travail d\'équipe' },
+              { name: language === 'fr' ? 'Travail d\'équipe' : 'Teamwork' },
               { name: 'Git' },
               { name: 'GitHub' },
             ],
@@ -122,10 +133,11 @@ export default function Projects({ onSelectProject }) {
         },
         {
             id: 8,
-            title: "Len-Synphonie - Synthétiseur Vocal",
-            description: "Site où les personnes peuvent écouter et créer des sons grâce à un synthétiseur vocal.",
-            longDescription: "Application web innovante permettant de composer de la musique via une interface web. Les utilisateurs peuvent assembler des boucles sonores, ajuster le tempo et exporter leurs créations. Le projet utilise l'API Web Audio pour la synthèse sonore directement dans le navigateur.",
-            skillsDescription: "J'ai approfondi mes connaissances en JavaScript avancé et en manipulation du DOM. J'ai également appris à interagir avec des API web complexes pour le traitement audio et à gérer l'état d'une application riche côté client.",
+            key: 'lenSynphonie',
+            title: language === 'fr' ? "Len-Synphonie - Synthétiseur Vocal" : "Len-Synphonie - Vocal Synthesizer",
+            description: t('projectDescriptions.lenSynphonie.short'),
+            longDescription: t('projectDescriptions.lenSynphonie.long'),
+            skillsDescription: t('projectDescriptions.lenSynphonie.skills'),
             skillsWorked: [
               { name: 'Laravel' },
               { name: 'PHP' },
@@ -141,19 +153,19 @@ export default function Projects({ onSelectProject }) {
 
     return (
         <section className="projects reveal">
-            <h2>Mes projets personnels et d'étude</h2>
+            <h2>{t('projects.title')}</h2>
             <div className="projects-grid">
                 {projects.map((p) => (
                     <article key={p.id} className="project-card">
                         <h3>{p.title}</h3>
                         <p>{p.description}</p>
                         <div className="project-actions">
-                            <a href={p.link} target="_blank" rel="noopener noreferrer">Voir le code</a>
+                            <a href={p.link} target="_blank" rel="noopener noreferrer">{t('projects.viewCode')}</a>
                             <button
                                 className="muted"
                                 onClick={() => onSelectProject ? onSelectProject(p) : null}
                             >
-                                Détails
+                                {t('projects.viewDetails')}
                             </button>
                             {p.image ? (
                                 <button
