@@ -29,10 +29,10 @@ export default function Navbar({ current = 'home', onNavigate, theme = 'dark', o
 
       <div className="nav-actions">
         <button className="language-toggle" onClick={toggleLanguage} aria-label="Changer la langue">
-          {language === 'fr' ? '🇬🇧' : '🇫🇷'}
+          {language === 'fr' ? 'EN' : 'FR'}
         </button>
         <button className="theme-toggle" onClick={onToggleTheme} aria-label="Basculer le thème">
-          {theme === 'dark' ? '🌙' : '☀️'}
+          {theme === 'dark' ? 'L' : 'N'}
         </button>
       </div>
     </header>

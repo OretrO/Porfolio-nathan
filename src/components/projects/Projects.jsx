@@ -57,6 +57,7 @@ export default function Projects({ onSelectProject }) {
                 { name: 'HTML' },
                 { name: 'Git' },
                 { name: 'GitLab' },
+                { name: 'JavaScript' },
             ],
             link: "https://github.com/OretrO/Porfolio-nathan",
             image: null
@@ -157,6 +158,11 @@ export default function Projects({ onSelectProject }) {
             <div className="projects-grid">
                 {projects.map((p) => (
                     <article key={p.id} className="project-card">
+                        {p.image && (
+                            <div className="project-image">
+                                <img src={p.image} alt={p.title} />
+                            </div>
+                        )}
                         <h3>{p.title}</h3>
                         <p>{p.description}</p>
                         <div className="project-actions">
