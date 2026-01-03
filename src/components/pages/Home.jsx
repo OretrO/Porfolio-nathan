@@ -18,6 +18,7 @@ export default function Home({ onNavigate }) {
                 <div className="hero-actions">
                     <button onClick={() => onNavigate('projects')}>{t('home.viewProjects')}</button>
                     <button onClick={() => onNavigate('about')} className="muted">{t('home.learnMore')}</button>
+                    <button onClick={() => onNavigate('contact')} className="muted">{t('home.contactMe')}</button>
                 </div>
             </div>
         </section>

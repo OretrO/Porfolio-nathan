@@ -43,7 +43,7 @@ export default function Contact() {
           {/* Visualiseur PDF avec iframe */}
           <div className="cv-viewer">
             <iframe
-              key={cvLanguage} // Force reload when language changes
+              key={cvLanguage}
               src={currentCV}
               title={`CV Nathan Plouvin ${cvLanguage === 'fr' ? '(Français)' : '(English)'}`}
               width="100%"

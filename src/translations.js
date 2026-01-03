@@ -14,7 +14,8 @@ export const translations = {
       subtitle: 'Développeur Full-Stack & Étudiant en BUT Informatique',
       lead: 'Bienvenue sur mon portfolio ! Je suis passionné par le développement web et les nouvelles technologies.',
       learnMore: 'En savoir plus',
-      viewProjects: 'Voir mes projets'
+      viewProjects: 'Voir mes projets',
+      contactMe: 'Me contacter'
     },
 
     // Projects
@@ -49,8 +50,8 @@ export const translations = {
       cvTitle: 'Mon CV',
       cvDescription: 'Consultez ou téléchargez mon CV pour en savoir plus sur mon parcours.',
       download: 'Télécharger mon CV',
-      french: '🇫🇷 Français',
-      english: '🇬🇧 English'
+      french: 'Français',
+      english: 'English'
     },
 
     // Footer
@@ -110,7 +111,8 @@ export const translations = {
       subtitle: 'Full-Stack Developer & Computer Science Student',
       lead: 'Welcome to my portfolio! I\'m passionate about web development and new technologies.',
       learnMore: 'Learn more',
-      viewProjects: 'View my projects'
+      viewProjects: 'View my projects',
+      contactMe: 'Contact me'
     },
 
     // Projects
@@ -145,8 +147,8 @@ export const translations = {
       cvTitle: 'My Resume',
       cvDescription: 'View or download my resume to learn more about my background.',
       download: 'Download my resume',
-      french: '🇫🇷 French',
-      english: '🇬🇧 English'
+      french: 'French',
+      english: 'English'
     },
 
     // Footer
