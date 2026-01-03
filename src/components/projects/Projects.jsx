@@ -4,6 +4,7 @@ import siteHTML from "../../assets/projects/SiteHTML.png"
 import cineHubImg from "../../assets/projects/cinehub.png"
 import marathonWeb from "../../assets/projects/marathonWeb.png"
 import lenSynphonie from "../../assets/projects/lenSynphonie.png"
+import pacmanImg from "../../assets/projects/Pacman.png"
 import { useLanguage } from '../../contexts/LanguageContext'
 import { getTranslation } from '../../translations'
 
@@ -149,6 +150,22 @@ export default function Projects({ onSelectProject }) {
             ],
             link: "https://github.com/OretrO/Len-Synphonie",
             image: lenSynphonie
+        },
+        {
+            id: 9,
+            key: 'pacman',
+            title: language === 'fr' ? "Pacman - Jeu d'Arcade" : "Pacman - Arcade Game",
+            description: t('projectDescriptions.pacman.short'),
+            longDescription: t('projectDescriptions.pacman.long'),
+            skillsDescription: t('projectDescriptions.pacman.skills'),
+            skillsWorked: [
+              { name: 'Java' },
+              { name: 'JavaFX' },
+              { name: 'Git' },
+              { name: 'GitHub' },
+            ],
+            link: "https://github.com/OretrO/PacMan",
+            image: pacmanImg
         }
     ]
 

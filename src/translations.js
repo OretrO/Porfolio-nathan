@@ -92,6 +92,11 @@ export const translations = {
         short: 'Site web avec synthétiseur vocal pour créer et écouter des sons.',
         long: 'Application web innovante permettant aux utilisateurs de créer et d\'écouter des sons grâce à un synthétiseur vocal. Développée avec Laravel et des technologies web modernes, cette application offre une interface intuitive pour la manipulation de sons et la création musicale.',
         skills: 'J\'ai exploré les API Web Audio, approfondi Laravel avec des vues Blade complexes, et développé mes compétences en UX/UI pour créer une interface musicale intuitive.'
+      },
+      pacman: {
+        short: 'Recréation du jeu d\'arcade classique Pacman en Java avec JavaFX.',
+        long: 'Projet de recréation du célèbre jeu Pacman développé en Java avec JavaFX pour l\'interface graphique. Le jeu inclut la gestion des fantômes, la détection de collisions, le système de points, et les mécaniques de jeu originales. L\'architecture du projet repose sur l\'utilisation de design patterns pour une meilleure structuration du code.',
+        skills: 'Ce projet m\'a permis de renforcer mes compétences en programmation orientée objet avec Java, de maîtriser JavaFX pour créer des interfaces graphiques animées, de gérer des états de jeu complexes, et d\'appliquer des design patterns pour structurer efficacement l\'architecture du jeu.'
       }
     }
   },
@@ -189,6 +194,11 @@ export const translations = {
         short: 'Website with vocal synthesizer to create and listen to sounds.',
         long: 'Innovative web application allowing users to create and listen to sounds through a vocal synthesizer. Developed with Laravel and modern web technologies, this application offers an intuitive interface for sound manipulation and music creation.',
         skills: 'I explored Web Audio APIs, deepened Laravel with complex Blade views, and developed my UX/UI skills to create an intuitive musical interface.'
+      },
+      pacman: {
+        short: 'Recreation of the classic Pacman arcade game in Java with JavaFX.',
+        long: 'Recreation project of the famous Pacman game developed in Java with JavaFX for the graphical interface. The game includes ghost management, collision detection, scoring system, and original game mechanics. The project architecture relies on the use of design patterns for better code structuring.',
+        skills: 'This project allowed me to strengthen my object-oriented programming skills with Java, master JavaFX to create animated graphical interfaces, manage complex game states, and apply design patterns to effectively structure the game architecture.'
       }
     }
   }
