@@ -11,9 +11,10 @@ import {
   ProjectDetail
 } from './components'
 
-import { LanguageProvider } from './contexts/LanguageContext'
+import { LanguageProvider, useLanguage } from './contexts/LanguageContext'
 
-function App() {
+function AppContent() {
+  const { language } = useLanguage()
   const [route, setRoute] = useState('home')
   const [selectedProject, setSelectedProject] = useState(null)
   const [theme, setTheme] = useState('dark')
@@ -62,25 +63,31 @@ function App() {
       els.forEach((el) => obs.unobserve(el))
       obs.disconnect()
     }
-  }, [route])
+  }, [route, language]) // Ajout de language pour relancer les animations lors du changement de langue
 
   return (
+    <div id="app-root" data-theme={theme}>
+      <Navbar current={route} onNavigate={setRoute} theme={theme} onToggleTheme={() => setTheme(t => t === 'dark' ? 'light' : 'dark')} />
+      <main className="container">
+        {route === 'home' && <Home onNavigate={setRoute} />}
+        {route === 'projects' && (
+          <Projects onSelectProject={(p) => { setSelectedProject(p); setRoute('project') }} />
+        )}
+        {route === 'project' && selectedProject && (
+          <ProjectDetail project={selectedProject} onBack={() => setRoute('projects')} />
+        )}
+        {route === 'about' && <About />}
+        {route === 'contact' && <Contact />}
+      </main>
+      <Footer />
+    </div>
+  )
+}
+
+function App() {
+  return (
     <LanguageProvider>
-      <div id="app-root" data-theme={theme}>
-        <Navbar current={route} onNavigate={setRoute} theme={theme} onToggleTheme={() => setTheme(t => t === 'dark' ? 'light' : 'dark')} />
-        <main className="container">
-          {route === 'home' && <Home onNavigate={setRoute} />}
-          {route === 'projects' && (
-            <Projects onSelectProject={(p) => { setSelectedProject(p); setRoute('project') }} />
-          )}
-          {route === 'project' && selectedProject && (
-            <ProjectDetail project={selectedProject} onBack={() => setRoute('projects')} />
-          )}
-          {route === 'about' && <About />}
-          {route === 'contact' && <Contact />}
-        </main>
-        <Footer />
-      </div>
+      <AppContent />
     </LanguageProvider>
   )
 }

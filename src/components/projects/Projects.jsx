@@ -163,24 +163,26 @@ export default function Projects({ onSelectProject }) {
                                 <img src={p.image} alt={p.title} />
                             </div>
                         )}
-                        <h3>{p.title}</h3>
-                        <p>{p.description}</p>
-                        <div className="project-actions">
-                            <a href={p.link} target="_blank" rel="noopener noreferrer">{t('projects.viewCode')}</a>
-                            <button
-                                className="muted"
-                                onClick={() => onSelectProject ? onSelectProject(p) : null}
-                            >
-                                {t('projects.viewDetails')}
-                            </button>
-                            {p.image ? (
+                        <div className="project-card-content">
+                            <h3>{p.title}</h3>
+                            <p>{p.description}</p>
+                            <div className="project-actions">
+                                <a href={p.link} target="_blank" rel="noopener noreferrer">{t('projects.viewCode')}</a>
                                 <button
                                     className="muted"
-                                    onClick={() => window.open(p.image, "_blank")}
+                                    onClick={() => onSelectProject ? onSelectProject(p) : null}
                                 >
-                                    Image
+                                    {t('projects.viewDetails')}
                                 </button>
-                            ) : null}
+                                {p.image ? (
+                                    <button
+                                        className="muted"
+                                        onClick={() => window.open(p.image, "_blank")}
+                                    >
+                                        Image
+                                    </button>
+                                ) : null}
+                            </div>
                         </div>
                     </article>
                 ))}
