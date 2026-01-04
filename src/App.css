@@ -35,6 +35,9 @@ html, body, #root, #app-root {
     margin: 0 auto 20px; /* centre l'image et ajoute un espace dessous */
     background-color: var(--surface);  /* placeholder pendant le chargement */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Optimisations de performance */
+    will-change: transform;
+    content-visibility: auto;
 }
 /* Navbar */
 .navbar {
@@ -192,6 +195,9 @@ body[data-theme="light"] .language-toggle:hover {
   background: rgba(0,0,0,0.3);
   position: relative;
   flex-shrink: 0;
+  /* Optimisation pour le lazy loading */
+  aspect-ratio: 16 / 9;
+  min-height: 200px;
 }
 
 .project-card .project-image img {
@@ -200,6 +206,9 @@ body[data-theme="light"] .language-toggle:hover {
   object-fit: cover;
   display: block;
   transition: transform 0.4s ease;
+  /* Optimisations de performance */
+  content-visibility: auto;
+  will-change: transform;
 }
 
 .project-card:hover .project-image img {

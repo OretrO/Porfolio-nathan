@@ -9,7 +9,14 @@ export default function Home({ onNavigate }) {
     return (
         <section className="home reveal">
             <div className="hero">
-                <img src={avatar} alt="Avatar de Nathan" className="avatar" />
+                <img
+                    src={avatar}
+                    alt="Avatar de Nathan"
+                    className="avatar"
+                    loading="eager"
+                    decoding="async"
+                    fetchpriority="high"
+                />
 
                 <h1>{t('home.title')}</h1>
 

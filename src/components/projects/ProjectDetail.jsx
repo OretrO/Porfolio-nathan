@@ -17,7 +17,13 @@ export default function ProjectDetail({ project, onBack }) {
 
       {project.image ? (
         <div className="project-image" style={{ textAlign: 'center', marginBottom: '1rem' }}>
-          <img src={project.image} alt={project.title} style={{ maxWidth: '720px', width: '100%', borderRadius: '8px' }} />
+          <img
+            src={project.image}
+            alt={project.title}
+            style={{ maxWidth: '720px', width: '100%', borderRadius: '8px' }}
+            loading="lazy"
+            decoding="async"
+          />
         </div>
       ) : null}
 

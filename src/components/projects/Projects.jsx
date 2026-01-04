@@ -177,7 +177,12 @@ export default function Projects({ onSelectProject }) {
                     <article key={p.id} className="project-card">
                         {p.image && (
                             <div className="project-image">
-                                <img src={p.image} alt={p.title} />
+                                <img
+                                    src={p.image}
+                                    alt={p.title}
+                                    loading="lazy"
+                                    decoding="async"
+                                />
                             </div>
                         )}
                         <div className="project-card-content">
