@@ -1,4 +1,4 @@
-import avatar from '../../assets/logos/nathan.png'
+import avatar from '../../assets/logos/nathan.jpg'
 import { useLanguage } from '../../contexts/LanguageContext'
 import { getTranslation } from '../../translations'
 
