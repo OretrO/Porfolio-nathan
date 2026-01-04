@@ -64,39 +64,58 @@ export const translations = {
     // Project descriptions
     projectDescriptions: {
       bomberman: {
+        title: 'Création d\'un Bomberman en Java',
         short: 'Clone du jeu Bomberman réalisé en Java avec une interface graphique.',
         long: 'Projet de recréation du célèbre jeu Bomberman en Java. Le jeu inclut une gestion complète des collisions, des power-ups, et une interface graphique intuitive. Ce projet m\'a permis de développer mes compétences en programmation orientée objet et en gestion d\'événements.',
         skills: 'Ce projet m\'a permis de maîtriser la programmation orientée objet en Java, la gestion des collisions et des événements, ainsi que le développement d\'interfaces graphiques avec Swing.'
       },
       gestionStock: {
+        title: 'Création d\'une application de gestion de stock',
         short: 'Application web de gestion de stock avec Laravel et MySQL.',
         long: 'Application complète de gestion de stock développée avec Laravel. Elle permet de gérer les produits, les catégories, les fournisseurs et les mouvements de stock. L\'application inclut un système d\'authentification, des tableaux de bord avec statistiques, et une interface responsive.',
         skills: 'J\'ai approfondi mes connaissances en Laravel (Eloquent ORM, migrations, seeders), en architecture MVC, et en conception de bases de données relationnelles avec MySQL.'
       },
       siteHTML: {
+        title: 'Création d\'un site en HTML/CSS',
         short: 'Site web statique créé avec HTML, CSS et JavaScript.',
         long: 'Site web vitrine réalisé en HTML, CSS et JavaScript pur. Le site est entièrement responsive et inclut des animations CSS, un menu de navigation dynamique, et des formulaires interactifs. C\'est l\'un de mes premiers projets web.',
         skills: 'Ce projet m\'a permis de consolider mes bases en HTML5, CSS3 (flexbox, grid, animations) et JavaScript vanilla, ainsi que les principes du responsive design.'
       },
       cinehub: {
+        title: 'CineHub - Hub de Films',
         short: 'Hub de films avec système de commentaires et de likes.',
         long: 'Plateforme web complète permettant aux utilisateurs de découvrir des films, de laisser des commentaires et d\'aimer leurs films préférés. Le projet utilise Laravel pour le backend avec une base de données SQLite, et inclut un système d\'authentification complet, une API interne, et une interface utilisateur moderne.',
         skills: 'J\'ai développé mes compétences en Laravel (routes, contrôleurs, vues Blade), en gestion de bases de données SQLite, en authentification utilisateur, et en création d\'interfaces interactives.'
       },
       marathonWeb: {
+        title: 'Marathon du Web',
         short: 'Site complet réalisé en 24h sur le thème de la musique.',
         long: 'Projet Marathon Web réalisé en équipe de 6 personnes en seulement 24 heures. Le défi consistait à créer un site web complet sur le thème de la musique. Nous avons utilisé Laravel, JavaScript et TailwindCSS pour créer une plateforme interactive avec un lecteur audio, des playlists, et une gestion d\'artistes.',
         skills: 'Ce projet m\'a appris à travailler en équipe sous pression, à utiliser TailwindCSS pour un développement rapide, à gérer Git en collaboration, et à prioriser les fonctionnalités essentielles.'
       },
       lenSynphonie: {
+        title: 'Len-Synphonie - Synthétiseur Vocal',
         short: 'Site web avec synthétiseur vocal pour créer et écouter des sons.',
         long: 'Application web innovante permettant aux utilisateurs de créer et d\'écouter des sons grâce à un synthétiseur vocal. Développée avec Laravel et des technologies web modernes, cette application offre une interface intuitive pour la manipulation de sons et la création musicale.',
         skills: 'J\'ai exploré les API Web Audio, approfondi Laravel avec des vues Blade complexes, et développé mes compétences en UX/UI pour créer une interface musicale intuitive.'
       },
       pacman: {
+        title: 'Pacman - Jeu d\'Arcade',
         short: 'Recréation du jeu d\'arcade classique Pacman en Java avec JavaFX.',
         long: 'Projet de recréation du célèbre jeu Pacman développé en Java avec JavaFX pour l\'interface graphique. Le jeu inclut la gestion des fantômes, la détection de collisions, le système de points, et les mécaniques de jeu originales. L\'architecture du projet repose sur l\'utilisation de design patterns pour une meilleure structuration du code.',
         skills: 'Ce projet m\'a permis de renforcer mes compétences en programmation orientée objet avec Java, de maîtriser JavaFX pour créer des interfaces graphiques animées, de gérer des états de jeu complexes, et d\'appliquer des design patterns pour structurer efficacement l\'architecture du jeu.'
+      },
+      portfolio: {
+        title: 'Création de mon portfolio en React',
+        short: 'Création de mon portfolio en React dans le cadre de l\'apprentissage du framework.',
+        long: 'Développement de mon portfolio personnel pour présenter mes projets et compétences. Utilisant React et Vite, le site est conçu comme une Single Page Application (SPA) performante. J\'ai mis en place un système de routage fluide, des animations d\'apparition et un mode sombre/clair.',
+        skills: 'J\'ai appris à utiliser React et son écosystème (Hooks, Props, State). J\'ai également amélioré mes compétences en CSS moderne (Flexbox, Grid, Variables CSS) et en déploiement continu via GitHub Pages.'
+      },
+      synthe: {
+        title: 'Synthétiseur sonore en Java',
+        short: 'Synthétiseur développé en Java pour reproduire des sons.',
+        long: 'Développement d\'un synthétiseur logiciel en Java capable de générer et modifier des ondes sonores en temps réel. Le projet inclut la création d\'oscillateurs (sinus, carré, triangle), de filtres et d\'enveloppes ADSR pour sculpter le son.',
+        skills: 'Ce projet technique m\'a fait explorer le traitement du signal audio et l\'utilisation de bibliothèques spécialisées. J\'ai dû appliquer des design patterns complexes pour gérer l\'architecture modulaire du synthétiseur.'
       }
     }
   },
