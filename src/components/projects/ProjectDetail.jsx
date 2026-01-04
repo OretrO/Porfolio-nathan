@@ -5,10 +5,15 @@ export default function ProjectDetail({ project, onBack }) {
   const { language } = useLanguage()
   const t = (key) => getTranslation(language, key)
 
+  // Récupère les traductions dynamiquement via la clé du projet
+  const title = project.key ? t(`projectDescriptions.${project.key}.title`) : project.title
+  const longDescription = project.key ? t(`projectDescriptions.${project.key}.long`) : project.longDescription
+  const skillsDescription = project.key ? t(`projectDescriptions.${project.key}.skills`) : project.skillsDescription
+
   return (
     <section className="project-detail reveal">
       <div className="project-header">
-        <h2>{project.title}</h2>
+        <h2>{title}</h2>
         <div className="project-header-actions">
           <button className="muted" onClick={onBack}>{t('projects.backToProjects')}</button>
           <a href={project.link} target="_blank" rel="noopener noreferrer" className="muted">{t('projects.viewCode')}</a>
@@ -19,7 +24,7 @@ export default function ProjectDetail({ project, onBack }) {
         <div className="project-image" style={{ textAlign: 'center', marginBottom: '1rem' }}>
           <img
             src={project.image}
-            alt={project.title}
+            alt={title}
             style={{ maxWidth: '720px', width: '100%', borderRadius: '8px' }}
             loading="lazy"
             decoding="async"
@@ -28,13 +33,13 @@ export default function ProjectDetail({ project, onBack }) {
       ) : null}
 
       <div className="project-long">
-        <p>{project.longDescription}</p>
+        <p>{longDescription}</p>
       </div>
 
-      {project.skillsDescription ? (
+      {skillsDescription ? (
         <div className="project-skills-description" style={{ marginTop: '1.5rem', marginBottom: '1.5rem' }}>
           <h3>{language === 'fr' ? 'Ce que j\'ai appris' : 'What I learned'}</h3>
-          <p>{project.skillsDescription}</p>
+          <p>{skillsDescription}</p>
         </div>
       ) : null}
 

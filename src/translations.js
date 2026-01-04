@@ -166,39 +166,58 @@ export const translations = {
     // Project descriptions
     projectDescriptions: {
       bomberman: {
+        title: 'Bomberman Game in Java',
         short: 'Clone of the Bomberman game made in Java with a graphical interface.',
         long: 'Recreation project of the famous Bomberman game in Java. The game includes complete collision management, power-ups, and an intuitive graphical interface. This project allowed me to develop my object-oriented programming and event management skills.',
         skills: 'This project allowed me to master object-oriented programming in Java, collision and event management, as well as GUI development with Swing.'
       },
       gestionStock: {
+        title: 'Stock Management Application',
         short: 'Stock management web application with Laravel and MySQL.',
         long: 'Complete stock management application developed with Laravel. It allows managing products, categories, suppliers, and stock movements. The application includes an authentication system, dashboards with statistics, and a responsive interface.',
         skills: 'I deepened my knowledge in Laravel (Eloquent ORM, migrations, seeders), MVC architecture, and relational database design with MySQL.'
       },
       siteHTML: {
+        title: 'HTML/CSS Website',
         short: 'Static website created with HTML, CSS, and JavaScript.',
         long: 'Showcase website made with pure HTML, CSS, and JavaScript. The site is fully responsive and includes CSS animations, a dynamic navigation menu, and interactive forms. This is one of my first web projects.',
         skills: 'This project allowed me to consolidate my basics in HTML5, CSS3 (flexbox, grid, animations) and vanilla JavaScript, as well as responsive design principles.'
       },
       cinehub: {
+        title: 'CineHub - Movie Hub',
         short: 'Movie hub with comment and like system.',
         long: 'Complete web platform allowing users to discover movies, leave comments, and like their favorite films. The project uses Laravel for the backend with an SQLite database, and includes a complete authentication system, an internal API, and a modern user interface.',
         skills: 'I developed my skills in Laravel (routes, controllers, Blade views), SQLite database management, user authentication, and interactive interface creation.'
       },
       marathonWeb: {
+        title: 'Web Marathon',
         short: 'Complete website created in 24h on the theme of music.',
         long: 'Web Marathon project completed as a team of 6 people in just 24 hours. The challenge was to create a complete website on the theme of music. We used Laravel, JavaScript, and TailwindCSS to create an interactive platform with an audio player, playlists, and artist management.',
         skills: 'This project taught me to work in a team under pressure, to use TailwindCSS for rapid development, to manage Git collaboratively, and to prioritize essential features.'
       },
       lenSynphonie: {
+        title: 'Len-Synphonie - Vocal Synthesizer',
         short: 'Website with vocal synthesizer to create and listen to sounds.',
         long: 'Innovative web application allowing users to create and listen to sounds through a vocal synthesizer. Developed with Laravel and modern web technologies, this application offers an intuitive interface for sound manipulation and music creation.',
         skills: 'I explored Web Audio APIs, deepened Laravel with complex Blade views, and developed my UX/UI skills to create an intuitive musical interface.'
       },
       pacman: {
+        title: 'Pacman - Arcade Game',
         short: 'Recreation of the classic Pacman arcade game in Java with JavaFX.',
         long: 'Recreation project of the famous Pacman game developed in Java with JavaFX for the graphical interface. The game includes ghost management, collision detection, scoring system, and original game mechanics. The project architecture relies on the use of design patterns for better code structuring.',
         skills: 'This project allowed me to strengthen my object-oriented programming skills with Java, master JavaFX to create animated graphical interfaces, manage complex game states, and apply design patterns to effectively structure the game architecture.'
+      },
+      portfolio: {
+        title: 'My React Portfolio',
+        short: 'Creating my portfolio in React as part of learning the framework.',
+        long: 'Development of my personal portfolio to showcase my projects and skills. Using React and Vite, the site is designed as a high-performance Single Page Application (SPA). I implemented a smooth routing system, reveal animations, and a dark/light mode.',
+        skills: 'I learned to use React and its ecosystem (Hooks, Props, State). I also improved my skills in modern CSS (Flexbox, Grid, CSS Variables) and continuous deployment via GitHub Pages.'
+      },
+      synthe: {
+        title: 'Sound Synthesizer in Java',
+        short: 'Synthesizer developed in Java to reproduce sounds.',
+        long: 'Development of a software synthesizer in Java capable of generating and modifying sound waves in real-time. The project includes creating oscillators (sine, square, triangle), filters, and ADSR envelopes to shape the sound.',
+        skills: 'This technical project led me to explore audio signal processing and the use of specialized libraries. I had to apply complex design patterns to manage the modular architecture of the synthesizer.'
       }
     }
   }
