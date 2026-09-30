@@ -1,0 +1,336 @@
+.project-page {
+  padding-inline: var(--gutter);
+}
+
+/* ---------- Barre de navigation du projet ---------- */
+
+.project-bar {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-height: 52px;
+  border-bottom: 1px solid var(--rule);
+}
+
+.project-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-right: auto;
+  text-decoration: none;
+}
+
+.project-position {
+  color: var(--ink-2);
+}
+
+.project-steps {
+  display: flex;
+  gap: 6px;
+}
+
+.project-steps a {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--rule);
+  transition:
+    background-color 0.2s var(--ease),
+    border-color 0.2s var(--ease),
+    color 0.2s var(--ease);
+}
+
+.project-steps a:hover {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--paper);
+}
+
+/* ---------- Titre ---------- */
+
+.project-head {
+  padding-top: clamp(28px, 5vw, 80px);
+}
+
+.project-kicker {
+  color: var(--ink-2);
+}
+
+.project-title {
+  margin-top: clamp(10px, 1.4vw, 20px);
+  font-size: clamp(3.25rem, 11.5vw, 12rem);
+  font-weight: 800;
+  font-stretch: 62%;
+  line-height: 0.8;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  overflow-wrap: break-word;
+}
+
+.project-tagline {
+  max-width: 30ch;
+  margin-top: clamp(16px, 2.2vw, 32px);
+  font-size: clamp(1.375rem, 2.4vw, 2.25rem);
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+  text-wrap: pretty;
+}
+
+/* ---------- Capture, posée sur un passe-partout ---------- */
+
+.project-media {
+  display: grid;
+  justify-items: center;
+  gap: 14px;
+  margin-top: clamp(32px, 5vw, 72px);
+  padding: clamp(16px, 4vw, 64px);
+  background: var(--paper-2);
+}
+
+.project-shot {
+  display: block;
+  line-height: 0;
+  cursor: zoom-in;
+}
+
+.project-shot img {
+  width: auto;
+  max-width: 100%;
+  max-height: min(78vh, 860px);
+  border: 1px solid var(--ink);
+  background: var(--paper);
+}
+
+.project-shot--cover {
+  width: min(100%, 880px);
+  aspect-ratio: 3 / 2;
+  border: 1px solid var(--ink);
+  cursor: default;
+}
+
+.project-media figcaption {
+  color: var(--ink-2);
+  text-align: center;
+}
+
+.project-enlarge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--ink);
+}
+
+/* ---------- Cartel + texte ---------- */
+
+.project-body {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  align-items: start;
+  column-gap: var(--gap);
+  row-gap: 48px;
+  margin-top: clamp(40px, 6vw, 96px);
+}
+
+.cartel {
+  grid-column: 1 / span 4;
+  position: sticky;
+  top: calc(var(--header-h) + 20px);
+  padding: 18px 20px 20px;
+  border: 1px solid var(--ink);
+  background: var(--paper);
+}
+
+.cartel-title {
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--ink);
+  font-size: 1.375rem;
+  font-weight: 750;
+  font-stretch: 75%;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+.cartel-row {
+  display: grid;
+  grid-template-columns: 6.5rem minmax(0, 1fr);
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+.cartel-row dt {
+  padding-top: 0.2em;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--ink-2);
+}
+
+.cartel-row dd {
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+.cartel-code {
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 18px;
+}
+
+.project-text {
+  grid-column: 6 / -1;
+  display: grid;
+  gap: clamp(36px, 4.5vw, 64px);
+  max-width: 68ch;
+}
+
+.project-text section {
+  display: grid;
+  gap: 14px;
+}
+
+.project-summary {
+  font-size: clamp(1.25rem, 1.75vw, 1.5rem);
+  line-height: 1.42;
+  text-wrap: pretty;
+}
+
+.project-learned {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  text-wrap: pretty;
+}
+
+.feature-list {
+  border-top: 1px solid var(--ink);
+}
+
+.feature-list li {
+  position: relative;
+  padding: 12px 0 12px 30px;
+  border-bottom: 1px solid var(--rule);
+}
+
+.feature-list li::before {
+  content: '';
+  position: absolute;
+  top: 1.3em;
+  left: 0;
+  width: 16px;
+  height: 2px;
+  background: var(--accent);
+}
+
+.project-related {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 8px 14px;
+}
+
+.project-related a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1.375rem;
+  font-weight: 650;
+  font-stretch: 78%;
+}
+
+.project-keys {
+  display: none;
+  color: var(--ink-2);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .project-keys {
+    display: block;
+  }
+}
+
+/* ---------- Projet suivant ---------- */
+
+.next-project {
+  position: relative;
+  isolation: isolate;
+  display: block;
+  margin-top: var(--section-space);
+  padding: 14px 0 clamp(20px, 3vw, 40px);
+  border-top: 2px solid var(--ink);
+  color: var(--ink);
+  text-decoration: none;
+  transition: color 0.3s var(--ease);
+}
+
+.next-project::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  inset: -2px calc(-1 * var(--gutter)) 0;
+  background: var(--ink);
+  transform: scaleY(0);
+  transform-origin: 50% 100%;
+  transition: transform 0.45s var(--ease);
+}
+
+.next-label {
+  color: var(--ink-2);
+  transition: color 0.3s var(--ease);
+}
+
+.next-title {
+  display: flex;
+  align-items: center;
+  gap: 0.15em;
+  margin-top: 12px;
+  font-size: clamp(3rem, 10vw, 10rem);
+  font-weight: 800;
+  font-stretch: 62%;
+  line-height: 0.82;
+  text-transform: uppercase;
+}
+
+.next-title .arrow {
+  flex: none;
+  width: 0.6em;
+  height: 0.6em;
+  color: var(--accent);
+  transition: transform 0.4s var(--ease);
+}
+
+@media (hover: hover) {
+  .next-project:hover {
+    color: var(--paper);
+  }
+
+  .next-project:hover::before {
+    transform: scaleY(1);
+  }
+
+  .next-project:hover .next-label {
+    color: color-mix(in srgb, var(--paper) 70%, var(--ink));
+  }
+
+  .next-project:hover .next-title .arrow {
+    transform: translateX(0.12em);
+  }
+}
+
+.project-missing {
+  display: grid;
+  justify-items: start;
+  gap: 28px;
+  padding-block: 18vh;
+}
+
+@media (max-width: 899px) {
+  .cartel {
+    position: static;
+    grid-column: 1 / -1;
+  }
+
+  .project-text {
+    grid-column: 1 / -1;
+  }
+}

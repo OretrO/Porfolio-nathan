@@ -1,47 +1,68 @@
 # Portfolio Nathan Plouvin
 
-Petit portfolio personnel réalisé avec React + Vite pour présenter des projets et compétences.
+Portfolio personnel réalisé avec React et Vite, publié sur GitHub Pages :
+<https://oretro.github.io/Porfolio-nathan/>
 
 ## Fonctionnalités
-- Thème sombre / clair avec sauvegarde dans localStorage
-- Sections : Accueil, Projets, À propos, Contact
-- Barres de compétences animées dans la section « À propos »
-- Page de détail pour chaque projet (description longue, compétences utilisées)
+
+- Une seule page d'accueil (projets, profil, contact) et une page par projet
+- Adresses partageables (`#/projets/cinehub`, `#/contact`…), bouton « retour » du navigateur fonctionnel
+- Index des projets filtrable par techno, avec aperçu au survol
+- Français / anglais (langue du navigateur par défaut)
+- Thème clair / sombre (celui de l'appareil par défaut)
+- Navigation au clavier : ← → entre les projets, Échap pour revenir à la liste
+- Polices auto-hébergées (Archivo, IBM Plex Mono) : aucun appel à un service externe
 
 ## Pré-requis
+
 - Node.js (version LTS recommandée)
 - npm
 
 ## Installation et lancement
-1. Installer les dépendances :
 
-   npm install
+```sh
+npm install      # installer les dépendances
+npm run dev      # serveur de développement
+npm run build    # version de production (dossier dist/)
+npm run deploy   # publier sur GitHub Pages
+```
 
-2. Lancer le serveur de développement :
+> Le script `deploy` utilise `gh-pages` et le champ `homepage` de package.json.
 
-   npm run dev
+## Modifier le contenu
 
-3. Construire pour la production :
+| Quoi | Où |
+| --- | --- |
+| Projets (textes FR/EN, technos, liens, captures) | `src/data/projects.js` |
+| Profil, compétences, liens, CV | `src/data/profile.js` |
+| Textes de l'interface | `src/i18n/translations.js` |
+| Couleurs, polices, espacements | variables en haut de `src/index.css` |
+| Captures d'écran des projets | `src/assets/projects/` |
+| CV (PDF) | `src/assets/perso/` |
 
-   npm run build
+Pour ajouter un projet : importer sa capture en haut de `src/data/projects.js`, puis ajouter
+un objet à la liste (même forme que les autres). Son numéro, sa page et les compteurs de la
+section « Outils et langages » se mettent à jour tout seuls.
 
-4. Déployer (gh-pages) :
+## Structure
 
-   npm run deploy
-
-> Le script `deploy` utilise `gh-pages` et le champ `homepage` dans package.json.
-
-## Modifier les projets / compétences
-- Liste des projets : `src/components/Projects.jsx` (ajouter/éditer les objets projets)
-- Section compétences : `src/components/About.jsx`
-- Page de détail : `src/components/ProjectDetail.jsx`
-
-## Structure importante
-- src/
-  - components/ (composants React)
-  - assets/ (images)
-  - App.jsx, App.css (configuration globale)
+```text
+src/
+├── data/          contenu (projets, profil)
+├── i18n/          langue et textes de l'interface
+├── theme/         thème clair / sombre
+├── router/        routage par ancre (#/…)
+├── hooks/         petits hooks réutilisables
+├── components/
+│   ├── layout/    en-tête, pied de page
+│   ├── pages/     accueil, page projet
+│   ├── sections/  hero, projets, profil, contact
+│   ├── projects/  visuels des projets
+│   └── ui/        boutons, liens, flèches…
+├── App.jsx
+└── index.css      variables et styles de base
+```
 
 ## Contact
-nathanplouvin482@gmail.com
 
+<nathanplouvin482@gmail.com>

@@ -1,0 +1,122 @@
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: var(--gap);
+  row-gap: clamp(56px, 7vw, 112px);
+  margin-top: clamp(32px, 4.5vw, 72px);
+}
+
+.about-lead {
+  grid-column: 4 / -1;
+  max-width: 34ch;
+  font-size: clamp(1.5rem, 2.7vw, 2.75rem);
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -0.018em;
+  text-wrap: pretty;
+}
+
+.about-block {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: subgrid;
+  row-gap: 14px;
+}
+
+.about-block .subhead {
+  grid-column: 1 / span 3;
+  padding-top: 6px;
+}
+
+.about-block .ledger,
+.skills-note {
+  grid-column: 4 / -1;
+}
+
+/* Registre : libellé à gauche, contenu à droite, filets entre les lignes */
+.ledger {
+  border-top: 1px solid var(--ink);
+}
+
+.ledger-row {
+  display: grid;
+  grid-template-columns: minmax(7rem, 1fr) minmax(0, 3fr);
+  gap: 6px var(--gap);
+  align-items: baseline;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+.ledger-row dt {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  color: var(--ink-2);
+}
+
+.ledger-row dd {
+  max-width: 60ch;
+  font-size: 1.125rem;
+  line-height: 1.45;
+}
+
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px 20px;
+}
+
+.skill {
+  font-size: clamp(1.25rem, 1.9vw, 1.75rem);
+  font-weight: 600;
+  font-stretch: 78%;
+  line-height: 1.25;
+}
+
+span.skill {
+  font-weight: 400;
+  color: var(--ink-2);
+}
+
+.skill--used {
+  text-decoration: underline;
+  text-decoration-color: var(--rule);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.16em;
+  transition:
+    color 0.2s var(--ease),
+    text-decoration-color 0.2s var(--ease);
+}
+
+.skill--used:hover {
+  color: var(--accent);
+  text-decoration-color: currentColor;
+}
+
+.skill sup {
+  margin-left: 3px;
+  font-family: var(--font-mono);
+  font-size: 0.5em;
+  font-weight: 400;
+  font-stretch: 100%;
+  color: var(--accent);
+}
+
+.skills-note {
+  max-width: 64ch;
+  color: var(--ink-2);
+}
+
+@media (max-width: 899px) {
+  .about-lead,
+  .about-block .subhead,
+  .about-block .ledger,
+  .skills-note {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 559px) {
+  .ledger-row {
+    grid-template-columns: 1fr;
+  }
+}

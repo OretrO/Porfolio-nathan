@@ -1,0 +1,108 @@
+.site-footer {
+  margin-top: clamp(72px, 9vw, 136px);
+  padding: 0 var(--gutter) calc(18px + env(safe-area-inset-bottom));
+}
+
+.horizon {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--gap);
+  border-bottom: 1.5px solid var(--ink);
+}
+
+.horizon figcaption {
+  order: -1;
+  max-width: 30ch;
+  padding-bottom: 12px;
+  color: var(--ink-2);
+}
+
+.horizon-drawing {
+  flex: none;
+  width: clamp(240px, 40vw, 560px);
+  margin-right: 5%;
+  overflow: visible;
+  fill: none;
+  stroke: var(--ink);
+  stroke-width: 1.4;
+  stroke-linejoin: round;
+}
+
+/* pathLength="1" : le tracé se dessine de 0 à 100 % de sa longueur */
+.horizon-drawing path,
+.horizon-drawing circle {
+  stroke-dasharray: 1 1;
+  stroke-dashoffset: 1;
+  transition: stroke-dashoffset 1.8s var(--ease);
+}
+
+.horizon-drawing .horizon-gully {
+  stroke: var(--ink-2);
+  stroke-width: 0.9;
+}
+
+.horizon-drawing[data-drawn='true'] path,
+.horizon-drawing[data-drawn='true'] circle {
+  stroke-dashoffset: 0;
+}
+
+.horizon-drawing path:nth-child(2) {
+  transition-delay: 0.25s;
+}
+
+.horizon-drawing path:nth-child(3) {
+  transition-delay: 0.9s;
+}
+
+.horizon-drawing path:nth-child(4),
+.horizon-drawing circle {
+  transition-delay: 0.5s;
+}
+
+.footer-bar {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: start;
+  gap: 8px var(--gap);
+  padding-top: 14px;
+  color: var(--ink-2);
+}
+
+.footer-colophon {
+  max-width: 62ch;
+}
+
+.footer-top {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font: inherit;
+  color: var(--ink);
+}
+
+.footer-top:hover {
+  color: var(--accent);
+}
+
+@media (max-width: 719px) {
+  .horizon {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .horizon-drawing {
+    width: 100%;
+    margin-right: 0;
+  }
+
+  .footer-bar {
+    grid-template-columns: 1fr auto;
+  }
+
+  .footer-colophon {
+    grid-column: 1 / -1;
+    grid-row: 2;
+  }
+}

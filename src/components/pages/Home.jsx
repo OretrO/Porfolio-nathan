@@ -1,33 +1,24 @@
-import avatar from '../../assets/logos/nathan.jpg'
-import { useLanguage } from '../../contexts/LanguageContext'
-import { getTranslation } from '../../translations'
+import { useRouter } from '../../router/context'
+import Hero from '../sections/Hero'
+import Projects from '../sections/Projects'
+import About from '../sections/About'
+import Contact from '../sections/Contact'
 
-export default function Home({ onNavigate }) {
-    const { language } = useLanguage()
-    const t = (key) => getTranslation(language, key)
+export default function Home({ filter, onFilterChange }) {
+  const { navigate } = useRouter()
 
-    return (
-        <section className="home reveal">
-            <div className="hero">
-                <img
-                    src={avatar}
-                    alt="Avatar de Nathan"
-                    className="avatar"
-                    loading="eager"
-                    decoding="async"
-                    fetchpriority="high"
-                />
+  // Depuis « Outils et langages » : filtre l'index et remonte jusqu'à lui.
+  const showProjectsUsing = (tech) => {
+    onFilterChange(tech)
+    navigate('/projets')
+  }
 
-                <h1>{t('home.title')}</h1>
-
-                <h2>{t('home.subtitle')}</h2>
-
-                <div className="hero-actions">
-                    <button onClick={() => onNavigate('projects')}>{t('home.viewProjects')}</button>
-                    <button onClick={() => onNavigate('about')} className="muted">{t('home.learnMore')}</button>
-                    <button onClick={() => onNavigate('contact')} className="muted">{t('home.contactMe')}</button>
-                </div>
-            </div>
-        </section>
-    )
+  return (
+    <>
+      <Hero />
+      <Projects filter={filter} onFilterChange={onFilterChange} />
+      <About onPickTech={showProjectsUsing} />
+      <Contact />
+    </>
+  )
 }

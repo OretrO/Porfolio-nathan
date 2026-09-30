@@ -1,95 +1,63 @@
-import { useState, useEffect } from 'react'
-import './App.css'
+import { useEffect, useState } from 'react'
+import { Header, Footer, Home, ProjectPage } from './components'
+import LanguageProvider from './i18n/LanguageProvider'
+import ThemeProvider from './theme/ThemeProvider'
+import RouterProvider from './router/RouterProvider'
+import { useI18n } from './i18n/context'
+import { useRouter } from './router/context'
+import { findProject } from './data/projects'
 
-import {
-  Navbar,
-  Footer,
-  Home,
-  About,
-  Contact,
-  Projects,
-  ProjectDetail
-} from './components'
-
-import { LanguageProvider, useLanguage } from './contexts/LanguageContext'
-
-function AppContent() {
-  const { language } = useLanguage()
-  const [route, setRoute] = useState('home')
-  const [selectedProject, setSelectedProject] = useState(null)
-  const [theme, setTheme] = useState('dark')
-
-  // Fixe un titre constant pour l'onglet
-  useEffect(() => {
-    const base = 'Portfolio — Nathan Plouvin'
-    try {
-      document.title = base
-    } catch (err) {
-      console.warn('Impossible de définir le titre du document :', err)
-    }
-  }, [])
-
-  useEffect(() => {
-    // persist theme and set it on <body> so background covers full page
-    try {
-      localStorage.setItem('theme', theme)
-    } catch (err) {
-      console.warn('Could not persist theme to localStorage:', err)
-    }
-    try {
-      document.body.dataset.theme = theme
-    } catch (err) {
-      console.warn('Could not set body data-theme:', err)
-    }
-  }, [theme])
-
-  useEffect(() => {
-    // reveal-on-scroll for elements with .reveal
-    const obs = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) entry.target.classList.add('in-view')
-        })
-      },
-      { threshold: 0.12 }
-    )
-
-    const els = Array.from(document.querySelectorAll('.reveal'))
-    // clear previous state so elements can animate / become visible again
-    els.forEach((el) => el.classList.remove('in-view'))
-    els.forEach((el) => obs.observe(el))
-
-    return () => {
-      els.forEach((el) => obs.unobserve(el))
-      obs.disconnect()
-    }
-  }, [route, language]) // Ajout de language pour relancer les animations lors du changement de langue
-
+function SkipLink() {
+  const { t } = useI18n()
+  const skip = (event) => {
+    // pas de changement d'ancre : l'adresse sert au routage
+    event.preventDefault()
+    const main = document.getElementById('main')
+    main?.focus({ preventScroll: true })
+    main?.scrollIntoView()
+  }
   return (
-    <div id="app-root" data-theme={theme}>
-      <Navbar current={route} onNavigate={setRoute} theme={theme} onToggleTheme={() => setTheme(t => t === 'dark' ? 'light' : 'dark')} />
-      <main className="container">
-        {route === 'home' && <Home onNavigate={setRoute} />}
-        {route === 'projects' && (
-          <Projects onSelectProject={(p) => { setSelectedProject(p); setRoute('project') }} />
-        )}
-        {route === 'project' && selectedProject && (
-          <ProjectDetail project={selectedProject} onBack={() => setRoute('projects')} />
-        )}
-        {route === 'about' && <About />}
-        {route === 'contact' && <Contact />}
-      </main>
-      <Footer />
-    </div>
+    <a className="skip-link" href="#main" onClick={skip}>
+      {t('skip')}
+    </a>
   )
 }
 
-function App() {
+function Shell() {
+  const { route } = useRouter()
+  const { t, pick } = useI18n()
+  // Le filtre vit ici pour survivre à un aller-retour vers une page projet.
+  const [filter, setFilter] = useState(null)
+  const project = route.name === 'project' ? findProject(route.slug) : null
+
+  useEffect(() => {
+    document.title = project ? t('meta.projectTitle', { title: pick(project.title) }) : t('meta.title')
+  }, [project, t, pick])
+
+  return (
+    <>
+      <SkipLink />
+      <Header />
+      <main id="main" tabIndex={-1}>
+        {route.name === 'project' ? (
+          <ProjectPage slug={route.slug} />
+        ) : (
+          <Home filter={filter} onFilterChange={setFilter} />
+        )}
+      </main>
+      <Footer />
+    </>
+  )
+}
+
+export default function App() {
   return (
     <LanguageProvider>
-      <AppContent />
+      <ThemeProvider>
+        <RouterProvider>
+          <Shell />
+        </RouterProvider>
+      </ThemeProvider>
     </LanguageProvider>
   )
 }
-
-export default App
